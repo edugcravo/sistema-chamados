@@ -1,0 +1,30 @@
+<div class="container">
+
+  <img src="../../../assets/imagens/fundo_login.svg" alt="" class="fundo">
+
+  <div class="bloco_login">
+
+    <h1>Help Desk</h1>
+
+    <div class="username">
+      <p>Usuário: </p>
+      <input type="text" [(ngModel)]="usuario" name="usuario">
+    </div>
+
+    <div class="senha">
+      <p>Senha: </p>
+      <input type="password" [(ngModel)]="senha" name="senha">
+    </div>
+
+    <div class="entrar">
+      <button type="submit" (click)="login()"> <img src="../../../assets/imagens/icone_entrar.svg" alt=""> ENTRAR</button>
+    </div>
+    
+
+    <div class="intranet">
+      <p> <img src="../../../assets/imagens/icone_exclamacao.svg" alt=""> Entre com seu login da intranet</p>
+    </div>
+
+  </div>
+
+</div>

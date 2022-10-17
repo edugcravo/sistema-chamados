@@ -1,0 +1,126 @@
+@import url("https://use.typekit.net/vuc0sxh.css");
+
+*{
+    font-family: "proxima-nova" !important;
+}
+
+.container{
+    width: 82%;
+    background-color: #f6f6f6;
+    margin-left: 18%;
+    
+}
+
+label {
+    font-size: 20px;
+}
+
+.bloco_topo{
+    height: 10%;
+    border-bottom: 1px solid gray;
+}
+
+.topo{
+    height: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lado_direito img{
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+}
+
+.lado_direito{
+    display: flex;
+    align-items: center;
+}
+
+.titulo h1{
+    color: gray;
+}
+
+.nome{
+    display: flex;
+    align-items: center;
+}
+
+.estatisticas_chamado{
+
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 20px;
+}
+
+
+.blocos{
+    width: 23%;
+    height: 125px;
+    background-color: white;
+}
+
+.superior{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+}
+
+.superior h1{
+    font-size: 40px;
+    color: #38b6ff;
+}
+
+.blocos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.blocos p{
+    font-size: 24px;
+    padding-left: 20px;
+    padding-top: 5px;
+    font-weight: 600;
+}
+
+.superior img{
+    width: 40px;
+    height: 40px;
+}
+
+.bloco_grafico{
+    width: 50%;
+    height: 500px;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
+
+/* .grafico{
+    width: 70%;
+    height: 90%;
+    background-color: white;
+    padding: 15px;
+} */
+
+
+.grafico{
+    width: 85%;
+    max-width: 450px;
+    background-color: white;
+  }
+  
+
+.nome img{
+    width: 50px;
+    height: 50px;
+    
+}

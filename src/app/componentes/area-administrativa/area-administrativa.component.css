@@ -1,0 +1,82 @@
+@import url("https://use.typekit.net/vuc0sxh.css");
+
+*{
+    font-family: "proxima-nova" !important;
+}
+
+.container{
+    background-color: #f6f6f6;
+    margin-left: 18%;
+    height: 86vh;
+}
+
+
+.conteudo{
+    width: 90%;
+    height: 95%;
+    margin: 30px auto 0px auto;
+}
+
+.bloco_superior{
+    background-color: white;
+    height: 30vh;
+}
+
+.blocos_inferiores{
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-between;
+}
+
+.bloco_direita, .bloco_esquerda{
+    text-align: center;
+    width: 45%;
+    height: 382px;
+    background-color: white;
+}
+
+
+.nome, .username, .email, .nascimento, .setor, .ramal, .senha, .nivel{
+display: flex;
+    width: 68%;
+    justify-content: space-between;
+    margin: 10px auto;
+}
+
+.nome input, .username input, .email input, .nascimento input, .setor input, .ramal input, .senha input, .nivel input{
+    border: 1px solid gray;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-left: 5px;
+    padding-left: 10px;
+}
+
+
+.enviar{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.enviar button{
+    padding: 6px;
+    background-color: #c6c6c6;
+    border: none;
+    border-radius: 10px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+::ng-deep nz-table{
+    overflow: auto;
+    height: 100%;
+    height: 84%;
+}
+
+::ng-deep .nz-disable-td.ant-table-cell{
+    display: none !important;
+}

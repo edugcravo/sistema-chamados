@@ -1,0 +1,110 @@
+<app-menu-lateral></app-menu-lateral>
+<app-menu-superior></app-menu-superior>
+<div class="container">
+
+    <div class="bloco_chamado">
+        <div class="blocos">
+
+            <div class="bloco_esquerda"> 
+                <div class="topo_bloco_esquerda">
+                    <h1>ID do chamado: {{chamado?.id}}</h1>
+                </div>
+
+                <div class="bloco_chamado">
+                
+                  <div class="conteudo_chamado">
+            
+                    <div class="inputs">
+                      <form 
+                      [formGroup]="chamadosForm"
+                      (ngSubmit)="enviaDadosChamado()"  >
+                      <div class="id">
+                        <label>ID do equipamento : </label>
+                        <input type="number"  disabled value="{{chamado?.id_equipamento}}">
+                      </div>
+              
+                      <div class="local">
+                        <label>Local : </label>
+                        <input type="text"   disabled value="{{chamado?.local}}">
+                      </div>
+              
+                      <div class="ramal">
+                        <label>Ramal : </label>
+                        <input type="text"  disabled value="{{chamado?.ramal}}">
+                      </div>
+              
+                      <div class="problema">
+                        <label>Tipo do problema : </label>
+                        <input type="text" disabled value="{{chamado?.tipo_problema}}">
+                        <!-- <nz-select formControlName="tipo_problema" name="tipo_problema" class="select" [(ngModel)]="problemaSelecionado" nzDisabled> 
+                          <nz-option *ngFor="let item of problemas" [nzLabel]="item?.tipo_problema" [nzValue]="item?.tipo_problema"></nz-option>
+                        </nz-select> -->
+                      </div>
+
+                      <div class="arquivo">
+                        <label >Arquivos anexados: </label>
+                      </div>
+              
+                      <div class="descricao_problema">
+                        <label >Descrição do problema : </label>
+                        <textarea value="{{chamado?.desc_problema}}" disabled placeholder="Descreva o problema detalhadamente para que o técnico tenha um diagnostico com uma melhor precisao" ></textarea>
+                      </div>
+              
+
+
+                      <div [ngClass]="item.tecnico == 0 ? 'resposta' : 'resposta2'" *ngFor="let item of respostas">
+                        <label *ngIf="item.tecnico == 0">Resposta tecnico: </label>
+                        <label *ngIf="item.tecnico == 1">Resposta usuario: </label>
+
+                        <div class="resposta-conteudo">
+                          {{item?.resposta}}
+                        </div>
+                      </div>
+
+
+              
+                      <div class="resolucao_problema">
+                        <label >Resposta : </label>
+                        <textarea formControlName="resolucao_problema" name="resolucao_problema" placeholder="resposta" ></textarea>
+                      </div>
+
+                      <div class="enviar">
+                        <button type="button" (click)="cancelarChamado()" class="cancelar">Cancelar chamado</button>
+
+                        <button type="submit" class="enviar_botao" [disabled]="!chamadosForm.valid">Responder chamado</button>
+                      </div>
+                      </form>
+                    </div>
+              
+                  </div>
+              
+                </div>
+            </div>
+
+            <div class="bloco_direita"> 
+              <div class="topo_bloco_direita">
+                <h1>Tecnico: </h1>
+              </div>
+
+              <div class="blocos_direita">
+
+                <div class="bloco_direita_esquerda">
+                  <h1>Foto de perfil</h1>
+                  <img src="../../../../assets/imagens/perfil-usuarios.png" alt="">
+                </div>
+
+                <div class="bloco_direita_direita">
+                  <p><b>Nome: </b>{{tecnicoChamado?.nome}}</p>
+                  <p><b>Especialidade: </b>{{tecnicoChamado?.especialidade}}</p>
+                  <p><b>Quantidade de chamados: </b>{{tecnicoChamado?.qtd_chamado}}</p>
+                </div>
+
+              </div>
+            </div>
+        </div>
+      
+
+    </div>
+
+
+</div>

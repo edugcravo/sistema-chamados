@@ -1,0 +1,157 @@
+
+@import url("https://use.typekit.net/vuc0sxh.css");
+
+*{
+    font-family: "proxima-nova" !important;
+}
+
+.container{
+    width: 82%;
+    height: 86vh;
+    background-color: #f6f6f6;
+    margin-left: 18%;
+}
+
+label {
+    font-size: 20px;
+}
+
+.bloco_topo{
+    height: 10%;
+    border-bottom: 1px solid gray;
+}
+
+.topo{
+    height: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lado_direito img{
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+}
+
+.lado_direito{
+    display: flex;
+    align-items: center;
+}
+
+.titulo h1{
+    color: gray;
+}
+
+.nome{
+    display: flex;
+    align-items: center;
+}
+
+.blocos{
+
+        display: flex;
+        justify-content: center;
+        padding-top: 30px;
+}
+
+.bloco_esquerda{
+    width: 50%;
+    background-color: white;
+    margin-right: 5%;
+}
+
+.bloco_direita{
+    width: 40%;
+    height: 100%;
+    background-color: white;
+}
+
+.lado_esquerdo img{
+    width: 200px;
+    height: 200px;
+}
+
+.nome_lado_direito, .nascimento, .email, .setor, .ramal, .setor, .chamados, .especialidade{
+    display: flex;
+}
+
+.conteudo_bloco_esquerda{
+    display: flex;
+    margin-top: 60px;
+    justify-content: space-around;
+}
+
+.bloco_esquerda h1{
+    text-align: center;
+
+}
+
+.nome_lado_direito , .nascimento, .email ,.setor, .ramal, .chamados, .especialidade{
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.nome_lado_direito label, .nascimento label, .email label,.setor label, .ramal label, .chamados label, .especialidade label{
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.bloco_esquerda h1{
+    margin-top: 20px;
+}
+
+.lado_esquerdo h1{
+    font-size: 20px;
+}
+
+.usuarios{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #c6c6c6;
+}
+
+.usuarios label{
+    margin-left: 20px;
+}
+
+.usuarios img{
+    height: 75px;
+    width: 75px;
+}
+
+.usuarios-ultimo{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+
+
+}
+
+.usuarios-ultimo label{
+    margin-left: 20px;
+}
+
+.usuarios-ultimo img{
+    height: 75px;
+    width: 75px;
+}
+
+.topo_bloco_direita{
+    border-bottom: 1px solid black;
+    text-align: center;
+    padding: 20px 0px;
+}
+
+.nome img{
+    width: 50px;
+    height: 50px;
+}

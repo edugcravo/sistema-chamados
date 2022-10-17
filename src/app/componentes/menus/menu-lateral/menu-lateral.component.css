@@ -1,0 +1,68 @@
+@import url("https://use.typekit.net/vuc0sxh.css");
+
+*{
+    font-family: "proxima-nova" !important;
+}
+
+.container{
+    width: 18%;
+    height: 100vh;
+    float: left;
+    background-color: #162D44;
+    position: fixed;
+  }
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.logo{
+    height: 10%;    
+}
+
+.logo pre{
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 7px;
+}
+
+
+.dashboard , .gerar-chamado, .informacoes-pessoais{
+    text-align: center;
+    border-bottom: 1px solid gray;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    font-weight: 500;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.equipe-suporte{
+    text-align: center;
+    border-bottom: 1px solid gray;
+    font-weight: 500;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.chamados-abertos{
+    text-align: center;
+    font-weight: 500;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.links-menu{
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}

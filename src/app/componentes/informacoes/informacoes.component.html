@@ -1,0 +1,72 @@
+<app-menu-lateral></app-menu-lateral>
+<app-menu-superior></app-menu-superior>
+
+<div class="container">
+
+        <div class="blocos">
+
+            <div class="bloco_esquerda">
+                <h1>Perfil</h1>
+
+                <div class="conteudo_bloco_esquerda">
+
+                    <div class="lado_esquerdo">
+                        <h1>Foto de perfil</h1>
+                        <img src="../../../../../assets/imagens/perfil-usuarios.png" alt="">
+                    </div>
+
+                    <div class="lado_direito_conteudo">
+                        <div class="nome_lado_direito" >
+                            <label>Nome: </label>
+                            <p>{{usuario?.nome}}</p>
+                        </div>
+
+                        <div class="especialidade" *ngIf="nomeTecnico != null">
+                            <label for="">Especialidade: </label>
+                            <p>{{usuario?.especialidade}}</p>
+                        </div>
+
+                        <div class="nascimento" *ngIf="nomeUsuario != null">
+                            <label for="">Data de nascimento: </label>
+                            <p>{{usuario?.nascimento}}</p>
+                        </div>
+
+                        <div class="email" *ngIf="nomeUsuario != null">
+                            <label for="">E-mail:</label>
+                            <p>{{usuario?.email}}</p>
+                        </div>
+
+                        <div class="setor" *ngIf="nomeUsuario != null">
+                            <label for="">Setor:</label>
+                            <p>{{usuario?.setor}}</p>
+                        </div>
+
+                        <div class="ramal" *ngIf="nomeUsuario != null">
+                            <label for="">Ramal: </label>
+                            <p>{{usuario?.ramal}}</p>
+                        </div>
+
+                        <div class="chamados" *ngIf="nomeUsuario != null">
+                            <label for="">Chamados Gerados: </label>
+                            <p>45</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bloco_direita">
+                <div class="topo_bloco_direita">
+                    <h1>Membros do setor</h1>
+                </div>
+
+                <div class="usuarios" *ngFor="let item of usuarioSetores">
+                    <img src="../../../../../assets/imagens/perfil-usuarios.png" alt="">
+                    <label>{{item.nome}}</label>
+                </div>
+
+
+            </div>
+
+        </div>
+
+</div>

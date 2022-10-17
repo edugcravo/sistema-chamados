@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="logo">
+    <pre>USS 
+SUPORTE</pre>
+  </div>
+
+  <div class="links-menu">
+    <div class="dashboard" *ngIf="tecnico">
+      <a routerLink="/dashboards" (click)="pagina('dashboard')">
+        Dashboard
+      </a>
+    </div>
+
+    <div class="gerar-chamado">
+      <a routerLink="/gerar-chamado" (click)="pagina('Gerar Chamado')">
+        Gerar chamado
+      </a>
+    </div>
+
+    <div class="informacoes-pessoais">
+      <a routerLink="/informacoes" (click)="pagina('Informações')">
+      Informações Pessoais
+      </a>
+    </div>
+
+    <div class="equipe-suporte">
+      <a routerLink="/equipe-suporte" (click)="pagina('Equipe Suporte')">
+      Equipe Suporte
+      </a>
+    </div>
+
+    <div class="chamados-abertos" *ngIf="tecnico">
+      <a routerLink="/chamados" (click)="pagina('Chamados Abertos')">
+      Chamados Abertos
+      </a>
+    </div>
+
+    <div class="chamados-abertos" *ngIf="usuario">
+      <a routerLink="/visualizacao-chamado" (click)="pagina('Visualização chamado')">
+      Chamados Abertos
+      </a>
+    </div>
+
+  </div>
+</div>

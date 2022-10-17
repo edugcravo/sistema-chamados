@@ -1,0 +1,140 @@
+@import url("https://use.typekit.net/vuc0sxh.css");
+
+*{
+    font-family: "proxima-nova" !important;
+}
+
+.container{
+    width: 82%;
+    background-color: #f6f6f6;
+    margin-left: 18%;
+    height: 89vh;
+}
+
+
+.bloco_chamado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.bloco_chamado h1{
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.conteudo_chamado{
+    width: 70%;
+    background: white;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.conteudo_chamado p{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.id, .local, .ramal, .problema{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+
+.descricao_problema{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.descricao_problema textarea{
+    width: 80%;
+    border: 1px solid gray;
+    box-sizing: border-box ;
+    border-radius: 10px ;
+    margin-top: 15px;
+    height: 100px;
+    padding-left: 10px;
+}
+
+.inputs{
+    padding-left: 30px;
+}
+
+.id input, .local input, .ramal input, .problema input{
+   width: 30%;
+   border: 1px solid gray;
+    box-sizing: border-box ;
+    border-radius: 10px ;
+   margin-left: 5px;
+   padding-left: 10px;
+}
+
+.id input:focus, .local input:focus, .ramal input:focus, .problema input:focus {
+    border-color: #40a9ff;
+    box-shadow: 0 0 0 2px rgb(24 144 255 / 20%);
+    border-right-width: 1px;
+    outline: 0;
+}
+
+::ng-deep nz-select-item.ant-select-selection-item.ng-star-inserted{
+    display: flex !important;
+    align-items: center !important;
+}
+
+::ng-deep nz-select-top-control{
+    border: 1px solid #EAEAEA !important;
+    box-sizing: border-box !important;
+    border-radius: 10px !important;
+}
+
+nz-select{
+    width: 33%;
+   border-width: 1px;
+   margin-left: 5px;
+   padding-left: 10px;
+}
+
+::ng-deep nz-select-top-control.ant-select-selector{
+    border: 1px solid gray !important;
+    height: 24px !important;
+}
+
+.arquivo{
+    width: 48%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 25px;
+}
+
+.enviar{
+    display: flex;
+    justify-content: flex-end;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.enviar button{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding: 10px;
+    background-color: #c6c6c6;
+    border: none;
+    border-radius: 10px;
+}
+
+.nome img{
+    width: 50px;
+    height: 50px;
+}
+
+
+app-menu-superior{
+    height: 10vh !important;
+}
+

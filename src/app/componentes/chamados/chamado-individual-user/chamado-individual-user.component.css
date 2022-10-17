@@ -1,0 +1,288 @@
+@import url("https://use.typekit.net/vuc0sxh.css");
+
+*{
+    font-family: "proxima-nova" !important;
+}
+
+.container{
+    width: 82%;
+    height: 100vh;
+    background-color: #f6f6f6;
+    margin-left: 18%;
+}
+
+label {
+    font-size: 20px;
+}
+
+.bloco_topo{
+    height: 10%;
+    border-bottom: 1px solid gray;
+}
+
+.topo{
+    height: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lado_direito img{
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+}
+
+.lado_direito{
+    display: flex;
+    align-items: center;
+}
+
+.titulo h1{
+    color: gray;
+}
+
+.nome{
+    display: flex;
+    align-items: center;
+}
+
+
+
+.superior{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+}
+
+.superior h1{
+    font-size: 40px;
+    color: #38b6ff;
+}
+
+
+
+.superior img{
+    width: 40px;
+    height: 40px;
+}
+
+
+
+.nome img{
+    width: 50px;
+    height: 50px;
+    
+}
+
+
+
+/* ------------------------------- */
+
+
+
+.bloco_chamado{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.blocos{
+    display: flex;
+    background-color: white;
+    width: 90%;
+}
+
+.bloco_esquerda{
+    width: 60%;
+}
+
+
+
+
+.bloco_chamado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.bloco_chamado h1{
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.conteudo_chamado{
+    width: 90%;
+    background: white;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.conteudo_chamado p{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.id, .local, .ramal, .problema{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+    width: 65%;
+}
+
+.descricao_problema{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.descricao_problema textarea{
+    width: 80%;
+    border-radius: 5px;
+    margin-top: 15px;
+    height: 80px;
+    padding-left: 10px;
+}
+
+.inputs{
+    padding-left: 30px;
+}
+
+.id input, .local input, .ramal input, .problema input{
+   width: 30%;
+   border-radius: 5px;
+   border-width: 1px;
+   margin-left: 5px;
+   padding-left: 10px;
+}
+
+.arquivo{
+    width: 48%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 25px;
+}
+
+.enviar{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.enviar button{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding: 10px;
+    background-color: #c6c6c6;
+    border: none;
+    border-radius: 10px;
+}
+
+.enviar_botao{
+    background-color: green !important;
+    color: white !important;
+    cursor: pointer;
+}
+
+.enviar_botao:disabled{
+    color: black !important;
+    cursor: unset;
+}
+
+.nome img{
+    width: 50px;
+    height: 50px;
+}
+
+.topo_bloco_esquerda, .topo_bloco_direita{
+    text-align: center;
+}
+
+
+.bloco_direita{
+    width: 40%;
+}
+
+.blocos_direita{
+    display: flex;
+}
+
+.bloco_direita_esquerda{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bloco_direita_direita{
+    width: 60%;
+}
+
+.bloco_direita_direita p{
+    margin-top: 30px;
+}
+
+.bloco_direita_esquerda img{
+    height: 140px;
+    width: 140px;
+}
+
+.bloco_direita_esquerda h1{
+    font-size: 14px;
+    text-align: center;
+}
+
+
+.resolucao_problema{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.resolucao_problema textarea{
+    width: 80%;
+    border-radius: 5px;
+    margin-top: 15px;
+    height: 80px;
+    padding-left: 10px;
+}
+
+::ng-deep .select{
+    width: 30% !important;
+}
+
+
+.resposta{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 30px;
+}
+
+
+.resposta2{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 30px;
+}
+
+
+.resposta-conteudo{
+    border-radius: 5px;
+    border: 1px solid gray;
+    width: 30%;
+    word-wrap: break-word;
+    padding: 5px;
+}

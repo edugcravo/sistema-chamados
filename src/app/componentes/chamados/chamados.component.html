@@ -1,0 +1,38 @@
+<app-menu-lateral></app-menu-lateral>
+<app-menu-superior></app-menu-superior>
+
+
+<div class="container">
+
+    <div class="chamados_abertos" >
+      <p>Chamados Abertos : <span>{{chamado?.chamado?.length}}</span></p>
+     
+
+    </div>
+
+    <div class="bloco_conteudo">
+      <div class="tabela">
+
+
+        <table id="customers">
+          <tr>
+            <th><input type="checkbox" name="" id=""></th>
+            <th class="id">Id</th>
+            <th class="titulo_descricao">Descrição do problema</th>
+            <th>Local</th>
+            <th>Nome do usuário</th>
+          </tr>
+          <tr *ngFor="let item of chamado?.chamado" (click)="abreChamado(item.id)">
+            <td><input type="checkbox" name="" id=""></td>
+            <td class="id">{{item.id}}</td>
+            <td class="descricao">{{item.desc_problema}}</td>
+            <td>{{item.local}}</td>
+            <td>{{item.id_usuario}}</td>
+          </tr>
+          
+        </table>
+
+      </div>
+
+    </div>
+</div>

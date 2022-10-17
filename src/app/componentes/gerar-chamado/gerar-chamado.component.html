@@ -1,0 +1,58 @@
+<app-menu-lateral></app-menu-lateral>
+<app-menu-superior></app-menu-superior>
+<div class="container">
+
+ 
+
+  <div class="bloco_chamado">
+    <h1>GERAR CHAMADO PARA EQUIPE DO SUPORTE</h1>
+    
+    <div class="conteudo_chamado">
+      <p>*preencha todos os campos necessários </p>
+
+      <div class="inputs">
+        <form 
+        [formGroup]="chamadosForm"
+        (ngSubmit)="enviaDadosChamado()"
+            >
+        <div class="id">
+          <label>ID do equipamento : </label>
+          <input type="number" formControlName="id_equipamento"  name="id_equipamento" required>
+        </div>
+
+        <div class="local">
+          <label>Local : </label>
+          <input type="text" formControlName="local" name="local" required>
+        </div>
+
+        <div class="ramal">
+          <label>Ramal : </label>
+          <input type="number" formControlName="ramal" name="ramal" required>
+        </div>
+
+        <div class="problema">
+          <label>Tipo do problema : </label>
+          <nz-select formControlName="tipo_problema" name="tipo_problema">
+            <nz-option *ngFor="let item of problemas" [nzLabel]="item.tipo_problema" [nzValue]="item.tipo_problema"></nz-option>
+          </nz-select>
+        </div>
+
+        <div class="descricao_problema">
+          <label >Descrição do problema : </label>
+          <textarea formControlName="desc_problema" name="desc_problema" required placeholder="Descreva o problema detalhadamente para que o técnico tenha um diagnostico com uma melhor precisao"></textarea>
+        </div>
+
+        <div class="arquivo">
+          <input type="file">
+        </div>
+
+        <div class="enviar">
+          <button type="submit" [disabled]="!chamadosForm.valid">ENVIAR</button>
+        </div>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+</div>

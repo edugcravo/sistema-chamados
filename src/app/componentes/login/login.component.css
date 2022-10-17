@@ -1,0 +1,105 @@
+.container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+
+.bloco_login{
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 55%;
+    margin: 0 auto;
+    align-items: center;
+    background-color: white;
+}
+
+.bloco_login h1{
+    font-family: arial;
+    margin-top: 45px;
+    margin-bottom: 35px;
+    color: #2e5781;
+    letter-spacing: 0.075em;
+}
+
+.username, .senha{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 77%;
+
+}
+
+.senha{
+    margin-top: 10px;
+}
+
+.username p, .senha p{
+    font-size: 20px;
+    font-family: arial;
+}
+
+.username input, .senha input{
+    height: 40px;
+    border: 1px solid #EAEAEA;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-top: 5px;
+    padding-left: 15px;
+}
+
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+  background-image: unset;
+}
+
+.entrar{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    
+}
+
+.entrar button {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+    border-width: 1px;
+    background-color: white;
+}
+
+.entrar img{
+    margin-right: 5px;
+}
+
+.intranet{
+    margin-top: 20px;
+}
+
+.intranet img{
+    margin-right: 5px;
+    width: 20px;
+}
+
+.intranet p{
+    margin: 0;
+    font-family: arial;
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.fundo{
+    width: 50%;
+}
+
+::ng-deep address, dl, ol, p, pre, ul {
+    margin-bottom: 0 !important;
+}

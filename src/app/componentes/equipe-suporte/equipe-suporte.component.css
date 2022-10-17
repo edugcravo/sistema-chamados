@@ -1,0 +1,165 @@
+@import url("https://use.typekit.net/vuc0sxh.css");
+
+*{
+    font-family: "proxima-nova" !important;
+}
+
+.container{
+    width: 82%;
+    background-color: #f6f6f6;
+    margin-left: 18%;
+}
+
+
+label {
+    font-size: 20px;
+}
+
+.bloco_topo{
+    height: 10%;
+    border-bottom: 1px solid gray;
+}
+
+.topo{
+    height: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lado_direito img{
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+}
+
+.lado_direito{
+    display: flex;
+    align-items: center;
+}
+
+.titulo h1{
+    color: gray;
+}
+
+.nome{
+    display: flex;
+    align-items: center;
+}
+
+.bloco_principal{
+    height: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.conteudo_bloco{
+    margin-top: 30px;
+    width: 70%;
+    height: 73vh;
+    background-color: white;
+    padding: 15px;
+}
+
+.blocos_usuarios{
+    width: 25%;
+}
+
+.blocos_usuarios img{
+    width: 70%;
+    height: 70%;
+}
+
+.blocos_usuarios_espaco{
+    width: 25%;
+    border-right: 1px solid gray;
+    padding-right: 6%;
+    margin-right: 6%;
+}
+
+.blocos_usuarios_espaco img{
+    width: 70%;
+    height: 70%;
+
+}
+
+.usuarios{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.sobre{
+    text-align: center;
+}
+
+.centro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.centro h1{
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+.centro p{
+    margin-bottom: 40px;
+}
+
+.email, .ramal{
+    display: flex;
+}
+
+.email label{
+    font-size: 18px;
+    font-weight: 600;
+
+}
+
+.email p{
+    font-size: 18px;
+}
+
+.ramal label{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.ramal p{
+    font-size: 18px;
+}
+
+.nome img{
+    width: 50px;
+    height: 50px;
+}
+
+::ng-deep .slick-initialized.slick-slider{
+    height: 60vh !important;
+}
+
+.centro img{
+    height: 200px;
+    width: 200px;
+}
+
+
+::ng-deep .ant-carousel .slick-dots li button{
+    background-color: grey;
+}
+
+::ng-deep .ant-carousel .slick-dots li.slick-active button{
+    background-color: black;
+}
+
+.especialidade b{
+  border: 1px solid black;
+  padding: 5px;
+}
+
+
