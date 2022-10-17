@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { ChamadosService } from 'src/app/services/chamados.service';
 import Swal from 'sweetalert2';
@@ -22,10 +23,13 @@ export class GerarChamadoComponent implements OnInit {
   tipo_problema: any;
   desc_problema: any;
   problemas: any;
+  erro: any = false;
+  dataTimeAtual: any = new Date().toISOString()
 
 
+  constructor(private router: Router, private chamadosService: ChamadosService, private fb: UntypedFormBuilder, private _snackBar: MatSnackBar) {
+ 
 
-  constructor(private router: Router, private chamadosService: ChamadosService, private fb: UntypedFormBuilder) {
     this.chamadosForm = this.fb.group({
       id_equipamento: ['', [Validators.required, Validators.maxLength(50)]],
       local: ['', [Validators.required, Validators.maxLength(50)]],
@@ -35,7 +39,7 @@ export class GerarChamadoComponent implements OnInit {
       status:[''],
       id_tecnico: [''],
       id_usuario: [''],
-      data_hora_criacao: []
+      data_hora_criacao: [this.dataTimeAtual]
     });
     
    }
@@ -48,6 +52,7 @@ export class GerarChamadoComponent implements OnInit {
   }
 
   enviaDadosChamado(){
+    if(this.chamadosForm.value.local != '' && this.chamadosForm.value.ramal != '' && this.chamadosForm.value.desc_problema != ''){
     this.chamadosForm.value.id_usuario = localStorage.getItem('id_usuario');
     console.log(this.chamadosForm.value)
     this.chamadosService.create_chamado(this.chamadosForm.value).then((data: any) =>{
@@ -70,7 +75,13 @@ export class GerarChamadoComponent implements OnInit {
         })
         this.router.navigate(['visualizacao-chamado']);
       }
-    })
+    })}
+    else{
+      this.erro = true
+      this._snackBar.open('Preencha todos os campos necessáros !', '', {
+        duration: 3000
+      })
+    }
   }
 
 

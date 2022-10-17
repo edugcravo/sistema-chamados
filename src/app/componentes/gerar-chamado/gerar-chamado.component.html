@@ -17,29 +17,29 @@
             >
         <div class="id">
           <label>ID do equipamento : </label>
-          <input type="number" formControlName="id_equipamento"  name="id_equipamento" required>
+          <input type="number" formControlName="id_equipamento"  name="id_equipamento" required >
         </div>
 
         <div class="local">
           <label>Local : </label>
-          <input type="text" formControlName="local" name="local" required>
+          <input type="text" formControlName="local" name="local" required [ngClass]="{'erro_input': erro == true && chamadosForm.value.local == ''}">
         </div>
 
         <div class="ramal">
           <label>Ramal : </label>
-          <input type="number" formControlName="ramal" name="ramal" required>
+          <input type="number" formControlName="ramal" name="ramal" required [ngClass]="{'erro_input': erro == true && chamadosForm.value.ramal == ''}">
         </div>
 
         <div class="problema">
           <label>Tipo do problema : </label>
-          <nz-select formControlName="tipo_problema" name="tipo_problema">
+          <nz-select formControlName="tipo_problema" name="tipo_problema" >
             <nz-option *ngFor="let item of problemas" [nzLabel]="item.tipo_problema" [nzValue]="item.tipo_problema"></nz-option>
           </nz-select>
         </div>
 
         <div class="descricao_problema">
           <label >Descrição do problema : </label>
-          <textarea formControlName="desc_problema" name="desc_problema" required placeholder="Descreva o problema detalhadamente para que o técnico tenha um diagnostico com uma melhor precisao"></textarea>
+          <textarea formControlName="desc_problema" [ngClass]="{'erro_input': erro == true && chamadosForm.value.desc_problema == ''}" name="desc_problema" required placeholder="Descreva o problema detalhadamente para que o técnico tenha um diagnostico com uma melhor precisao"></textarea>
         </div>
 
         <div class="arquivo">
@@ -47,7 +47,7 @@
         </div>
 
         <div class="enviar">
-          <button type="submit" [disabled]="!chamadosForm.valid">ENVIAR</button>
+          <button type="submit" >ENVIAR</button>
         </div>
         </form>
       </div>

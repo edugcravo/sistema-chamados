@@ -55,6 +55,7 @@ export class ChamadosService {
   atualiza_chamado(id:any, body: any, tecnico: any){
 
     console.log(id)
+    console.log(tecnico)
     console.log(body)
 
     let params = new HttpParams()
@@ -63,6 +64,24 @@ export class ChamadosService {
 
     return new Promise(resolve => {
       this.http.put(this.url + '/chamado/update_chamado', body, { headers: this.headers, params }).subscribe(data => {
+        resolve(data)
+      })
+    })
+  }
+
+
+  atualiza_status_chamado(id:any, body: any, tecnico: any){
+
+    console.log(id)
+    console.log(tecnico)
+    console.log(body)
+
+    let params = new HttpParams()
+      .set('id_chamado', id)
+      .set('tecnico', tecnico)
+
+    return new Promise(resolve => {
+      this.http.put(this.url + '/chamado/cancela_ou_reabre_chamado', body, { headers: this.headers, params }).subscribe(data => {
         resolve(data)
       })
     })

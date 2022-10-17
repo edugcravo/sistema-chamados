@@ -93,9 +93,9 @@ export class ChamadoIndividualComponent implements OnInit {
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       confirmButtonText: 'Sim!'
-    }).then((result) => {
+    }).then((result: any) => {
       if (result.isConfirmed) {
-      this.chamadoService.atualiza_chamado(this.chamado.id ,statusChamado, tecnico)
+      this.chamadoService.atualiza_status_chamado(this.chamado.id ,statusChamado, tecnico)
       }
     })
   }

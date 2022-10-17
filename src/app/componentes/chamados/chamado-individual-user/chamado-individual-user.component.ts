@@ -23,6 +23,7 @@ export class ChamadoIndividualUserComponent implements OnInit {
   tecnicoChamado: any;
   problemas: any;
   problemaSelecionado: any;
+  status: any;
 
 
   constructor(private router: Router, private chamadoService: ChamadosService, private fb: UntypedFormBuilder) { 
@@ -47,6 +48,8 @@ export class ChamadoIndividualUserComponent implements OnInit {
 
   obterChamado(){
     this.chamadoService.retorna_chamado_por_id(this.IdChamado).then((data: any) =>{
+      console.log(data)
+      this.status = data.chamado.status
       this.chamado = data.chamado
       this.usuarioChamado = data.usuario
       this.tecnicoChamado = data.tecnico
@@ -86,7 +89,9 @@ export class ChamadoIndividualUserComponent implements OnInit {
 
   cancelarChamado(){
     let tecnico = 1
-    let statusChamado = {status: "cancelado"}
+    let body = {
+      "status": "cancelado"
+    }
     Swal.fire({
       title: 'Tem certeza que deseja cancelar?',
       text: "Ao cancelar, não podera ser revertido!",
@@ -95,13 +100,46 @@ export class ChamadoIndividualUserComponent implements OnInit {
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       confirmButtonText: 'Sim!'
-    }).then((result) => {
+    }).then((result: any) => {
       if (result.isConfirmed) {
-      this.chamadoService.atualiza_chamado(this.chamado.id ,statusChamado, tecnico)
+        Swal.fire({
+          timer: 2000,
+          showConfirmButton: false,
+          icon:'success',
+          title: 'Chamado cancelado com sucesso !'
+        })
+      this.chamadoService.atualiza_status_chamado(this.chamado.id ,body, tecnico)
+      this.router.navigate(['visualizacao-chamado']);
       }
     })
   }
 
+
+  reabrirChamado(){
+    let tecnico = 1
+    let body = {
+      "status": "aberto"
+    }
+    Swal.fire({
+      title: 'Tem certeza que deseja reabrir o chamado?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sim!'
+    }).then((result: any) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          timer: 2000,
+          showConfirmButton: false,
+          icon:'success',
+          title: 'Chamado reaberto com sucesso !'
+        })
+      this.chamadoService.atualiza_status_chamado(this.chamado.id ,body, tecnico)
+      this.router.navigate(['visualizacao-chamado']);
+      }
+    })
+  }
 
   obterTiposProblemas(){
     this.chamadoService.retorna_todos_tipos_problemas().then((dados: any) =>{

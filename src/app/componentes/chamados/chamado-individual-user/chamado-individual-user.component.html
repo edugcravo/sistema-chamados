@@ -69,7 +69,9 @@
                       </div>
 
                       <div class="enviar">
-                        <button type="button" (click)="cancelarChamado()" class="cancelar">Cancelar chamado</button>
+                        <button type="button" (click)="cancelarChamado()" class="cancelar" *ngIf="status != 'cancelado'">Cancelar chamado</button>
+
+                        <button type="button" (click)="reabrirChamado()" class="cancelar" *ngIf="status == 'cancelado'">Reabrir chamado</button>
 
                         <button type="submit" class="enviar_botao" [disabled]="!chamadosForm.valid">Responder chamado</button>
                       </div>
