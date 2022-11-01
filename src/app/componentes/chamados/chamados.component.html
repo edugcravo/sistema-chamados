@@ -20,6 +20,7 @@
             <th class="id">Id</th>
             <th class="titulo_descricao">Descrição do problema</th>
             <th>Local</th>
+            <th>Status</th>
             <th>Nome do usuário</th>
           </tr>
           <tr *ngFor="let item of chamado?.chamado" (click)="abreChamado(item.id)">
@@ -27,6 +28,7 @@
             <td class="id">{{item.id}}</td>
             <td class="descricao">{{item.desc_problema}}</td>
             <td>{{item.local}}</td>
+            <td>{{item.status}}</td>
             <td>{{item.id_usuario}}</td>
           </tr>
           

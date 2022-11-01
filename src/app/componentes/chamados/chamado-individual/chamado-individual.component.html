@@ -53,7 +53,7 @@
 
                       <div [ngClass]="item.tecnico == 0 ? 'resposta' : 'resposta2'" *ngFor="let item of respostas">
                         <label *ngIf="item.tecnico == 0">Resposta tecnico: </label>
-                        <label *ngIf="item.tecnico == 1">Resposta usuario: </label>
+                        <label *ngIf="item.tecnico == 1">Resposta {{usuarioChamado?.nome}}: </label>
 
                         <div class="resposta-conteudo">
                           {{item?.resposta}}
@@ -64,7 +64,7 @@
               
                       <div class="resolucao_problema">
                         <label >Resposta : </label>
-                        <textarea formControlName="resolucao_problema" name="resolucao_problema" placeholder="resposta" ></textarea>
+                        <textarea formControlName="resolucao_problema" [(ngModel)]="resolucao" name="resolucao_problema" placeholder="resposta" ></textarea>
                       </div>
 
                       <div class="enviar">

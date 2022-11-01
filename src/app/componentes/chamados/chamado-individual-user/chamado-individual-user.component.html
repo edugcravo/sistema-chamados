@@ -35,7 +35,7 @@
               
                       <div class="problema">
                         <label>Tipo do problema : </label>
-                        <input type="text" disabled value="{{chamado?.tipo_problema}}">
+                        <input type="text" disabled value="{{problemaSelecionado}}">
                         <!-- <nz-select formControlName="tipo_problema" name="tipo_problema" class="select" [(ngModel)]="problemaSelecionado" nzDisabled> 
                           <nz-option *ngFor="let item of problemas" [nzLabel]="item?.tipo_problema" [nzValue]="item?.tipo_problema"></nz-option>
                         </nz-select> -->
@@ -53,27 +53,30 @@
 
 
                       <div [ngClass]="item.tecnico == 0 ? 'resposta' : 'resposta2'" *ngFor="let item of respostas">
-                        <label *ngIf="item.tecnico == 0">Resposta tecnico: </label>
+                        <label *ngIf="item.tecnico == 0">Resposta {{tecnicoChamado?.nome}}: </label>
                         <label *ngIf="item.tecnico == 1">Resposta usuario: </label>
 
-                        <div class="resposta-conteudo">
-                          {{item?.resposta}}
+                        <div class="resposta_bloco">
+                          <p>{{item?.data | date: 'dd/MM/yyyy HH:mm'}}</p>
+                          <div class="resposta-conteudo">
+                            {{item?.resposta}}
+                          </div>
                         </div>
                       </div>
 
 
               
-                      <div class="resolucao_problema">
+                      <div class="resolucao_problema" *ngIf="status != 'cancelado'">
                         <label >Resposta : </label>
-                        <textarea formControlName="resolucao_problema" name="resolucao_problema" placeholder="resposta" ></textarea>
+                        <textarea formControlName="resolucao_problema" [(ngModel)]="resolucao" name="resolucao_problema" placeholder="resposta" ></textarea>
                       </div>
 
-                      <div class="enviar">
+                      <div class="enviar" >
                         <button type="button" (click)="cancelarChamado()" class="cancelar" *ngIf="status != 'cancelado'">Cancelar chamado</button>
 
                         <button type="button" (click)="reabrirChamado()" class="cancelar" *ngIf="status == 'cancelado'">Reabrir chamado</button>
 
-                        <button type="submit" class="enviar_botao" [disabled]="!chamadosForm.valid">Responder chamado</button>
+                        <button type="submit" class="enviar_botao" *ngIf="status != 'cancelado'" [disabled]="!chamadosForm.valid">Responder chamado</button>
                       </div>
                       </form>
                     </div>

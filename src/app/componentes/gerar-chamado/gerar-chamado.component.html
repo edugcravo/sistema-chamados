@@ -21,24 +21,24 @@
         </div>
 
         <div class="local">
-          <label>Local : </label>
+          <label>*Local : </label>
           <input type="text" formControlName="local" name="local" required [ngClass]="{'erro_input': erro == true && chamadosForm.value.local == ''}">
         </div>
 
         <div class="ramal">
-          <label>Ramal : </label>
+          <label>*Ramal : </label>
           <input type="number" formControlName="ramal" name="ramal" required [ngClass]="{'erro_input': erro == true && chamadosForm.value.ramal == ''}">
         </div>
 
         <div class="problema">
-          <label>Tipo do problema : </label>
-          <nz-select formControlName="tipo_problema" name="tipo_problema" >
-            <nz-option *ngFor="let item of problemas" [nzLabel]="item.tipo_problema" [nzValue]="item.tipo_problema"></nz-option>
+          <label>*Tipo do problema : </label>
+          <nz-select formControlName="tipo_problema" name="tipo_problema" [ngClass]="{'erro_input': erro == true && chamadosForm.value.tipo_problema == ''}">
+            <nz-option *ngFor="let item of problemas" [nzLabel]="item.tipo_problema" [nzValue]="item.id"></nz-option>
           </nz-select>
         </div>
 
         <div class="descricao_problema">
-          <label >Descrição do problema : </label>
+          <label >*Descrição do problema : </label>
           <textarea formControlName="desc_problema" [ngClass]="{'erro_input': erro == true && chamadosForm.value.desc_problema == ''}" name="desc_problema" required placeholder="Descreva o problema detalhadamente para que o técnico tenha um diagnostico com uma melhor precisao"></textarea>
         </div>
 

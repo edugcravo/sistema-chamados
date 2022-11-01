@@ -49,16 +49,18 @@ export class ChamadoIndividualComponent implements OnInit {
       this.chamado = data.chamado
       this.usuarioChamado = data.usuario
 
-      this.problemaSelecionado = this.chamado.tipo_problema
+      this.problemaSelecionado = data.problema
     })
   }
+
+  resolucao: any;
 
   enviaDadosChamado(){
     let tecnico = 0
     let dadosForm = {
       resolucao_problema: this.chamadosForm.value.resolucao_problema,
       tipo_problema: this.chamadosForm.value.tipo_problema,
-      status: "finalizado"
+      status: "Aguardando resposta usuario"
     }
     this.chamadoService.atualiza_chamado(this.chamado.id ,dadosForm, tecnico).then((data: any) =>{
 
@@ -77,6 +79,7 @@ export class ChamadoIndividualComponent implements OnInit {
           title: 'Resposta enviada com sucesso !'
         })
         this.obterAcompanhamento()
+        this.resolucao = ''
       }
     })
   }

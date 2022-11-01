@@ -25,19 +25,18 @@ export class LoginComponent implements OnInit {
     }
     this.loginService.login(body).then((data: any) => {
       console.log(data)
-      if(data.status == 200){
-        if(data.tecnico){
-          localStorage.setItem('tecnico', data.tecnico.nome)
-          localStorage.setItem('id_tecnico', data.tecnico.id)
+      if(data?.status == 200 || data == null){
+        if(data?.tecnico){
+          localStorage.setItem('tecnico', data?.tecnico.nome)
+          localStorage.setItem('id_tecnico', data?.tecnico.id)
           this.router.navigate(['chamados']);
         }
         else{
           localStorage.setItem('usuario', this.usuario)
-          localStorage.setItem('id_usuario', data.id)
+          localStorage.setItem('id_usuario', data?.id)
           this.router.navigate(['gerar-chamado'])
         }
         localStorage.setItem('logado', 'true')
-        
       }else{
         this._snackBar.open('Usuário ou senha inválido', '', {
           duration: 3000

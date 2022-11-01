@@ -95,6 +95,7 @@ label {
     display: flex;
     background-color: white;
     width: 90%;
+    margin-bottom: 30px;
 }
 
 .bloco_esquerda{
@@ -126,8 +127,7 @@ label {
 
 .conteudo_chamado p{
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-right: 10px;
 }
 
 .id, .local, .ramal, .problema{
@@ -282,7 +282,13 @@ label {
 .resposta-conteudo{
     border-radius: 5px;
     border: 1px solid gray;
-    width: 30%;
+    width: 100%;
+    height: 100%;
     word-wrap: break-word;
     padding: 5px;
 }
+
+
+/* .resposta_bloco{
+    display: flex;
+} */

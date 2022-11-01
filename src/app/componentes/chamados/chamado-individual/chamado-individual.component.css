@@ -95,6 +95,7 @@ label {
     display: flex;
     background-color: white;
     width: 90%;
+    margin-bottom: 30px;
 }
 
 .bloco_esquerda{

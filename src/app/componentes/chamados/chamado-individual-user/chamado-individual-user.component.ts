@@ -48,23 +48,24 @@ export class ChamadoIndividualUserComponent implements OnInit {
 
   obterChamado(){
     this.chamadoService.retorna_chamado_por_id(this.IdChamado).then((data: any) =>{
-      console.log(data)
       this.status = data.chamado.status
       this.chamado = data.chamado
       this.usuarioChamado = data.usuario
       this.tecnicoChamado = data.tecnico
-      this.problemaSelecionado = this.chamado.tipo_problema
+      this.problemaSelecionado = data.problema
     })
   }
 
+  resolucao: any;
+
   enviaDadosChamado(){
+    console.log(this.problemaSelecionado)
     let tecnico = 1
     let dadosForm = {
       resolucao_problema: this.chamadosForm.value.resolucao_problema,
-      tipo_problema: this.chamadosForm.value.tipo_problema,
+      tipo_problema: this.problemaSelecionado,
       status: "finalizado"
     }
-
     this.chamadoService.atualiza_chamado(this.chamado.id ,dadosForm, tecnico).then((data: any) =>{
 
       if (!data.status) {
@@ -81,6 +82,7 @@ export class ChamadoIndividualUserComponent implements OnInit {
           icon:'success',
           title: 'Resposta enviada com sucesso !'
         })
+        this.resolucao = ''
         this.obterAcompanhamento()
       }
     })
@@ -118,7 +120,7 @@ export class ChamadoIndividualUserComponent implements OnInit {
   reabrirChamado(){
     let tecnico = 1
     let body = {
-      "status": "aberto"
+      "status": "em andamento"
     }
     Swal.fire({
       title: 'Tem certeza que deseja reabrir o chamado?',
@@ -153,8 +155,7 @@ export class ChamadoIndividualUserComponent implements OnInit {
   obterAcompanhamento(){
     this.chamadoService.retorna_acompanhamento(this.IdChamado).then((dados: any) =>{
       this.respostas = dados.respostas
-
-      
+        console.log(dados)
     })
   }
 }
