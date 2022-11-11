@@ -60,7 +60,7 @@ export class ChamadoIndividualComponent implements OnInit {
     let dadosForm = {
       resolucao_problema: this.chamadosForm.value.resolucao_problema,
       tipo_problema: this.chamadosForm.value.tipo_problema,
-      status: "Aguardando resposta usuario"
+      status: "em andamento"
     }
     this.chamadoService.atualiza_chamado(this.chamado.id ,dadosForm, tecnico).then((data: any) =>{
 

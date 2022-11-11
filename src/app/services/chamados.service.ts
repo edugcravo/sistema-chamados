@@ -17,6 +17,14 @@ export class ChamadosService {
   });
 
 
+  log(){
+    return new Promise(resolve => {
+      this.http.get(this.url + '/logs/retorna-todos', { headers: this.headers }).subscribe(data => {
+        resolve(data)
+      })
+    })
+  }
+
   create_chamado(body: any) {
     console.log(body)
     return new Promise(resolve => {

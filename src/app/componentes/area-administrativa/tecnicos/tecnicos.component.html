@@ -1,0 +1,47 @@
+<div class="topo">
+  <h1>TECNICOS</h1>
+  <img src="../../../assets/imagens/sair_modal.png" alt="" mat-dialog-close>
+</div>
+
+<form
+  id="new-collection-form-container"
+  [formGroup]="tecnicoForm"
+  (ngSubmit)="EnviarDados()"
+>
+
+<div class="container">
+  <div class="bloco_esquerda">
+
+    <div class="grupos">
+      <p *ngFor="let item of data" (click)="novoForm(item)" [ngClass]="{'selected': item.nome == nomeAtual}">{{item.nome}}</p>
+    </div>
+
+    <div class="novo_esquerda" (click)="openDialogNovoTecnico()"><img src="../../../assets/imagens/add.png" alt="">NOVO TECNICO</div>
+
+  </div>
+
+  <div class="bloco_direita">
+
+    <div class="titulo">
+      <p>NOME</p>
+      <input type="text" placeholder="Nome" formControlName="nome">
+    </div>
+
+    <div class="titulo">
+      <p>ESPECIALIDADE</p>
+      <input type="text" placeholder="Especialidade" formControlName="especialidade">
+    </div>
+
+
+
+  </div>
+
+
+</div>
+
+</form>
+
+<div class="botoes">
+  <button class="cancelar">CANCELAR</button>
+  <button class="salvar" (click)="EnviarDados()">SALVAR</button>
+</div>

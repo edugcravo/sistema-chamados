@@ -37,8 +37,9 @@ export class GerarChamadoComponent implements OnInit {
       tipo_problema: ['', [Validators.required, Validators.maxLength(50)]],
       desc_problema: ['', [Validators.required]],
       status:[''],
-      id_tecnico: [''],
+      id_tecnico: [0],
       id_usuario: [''],
+      arquivo: [''],
       data_hora_criacao: [this.dataTimeAtual]
     });
     
@@ -51,9 +52,12 @@ export class GerarChamadoComponent implements OnInit {
     this.obterTiposProblemas()
   }
 
+  id_usuario: any = localStorage.getItem('id_usuario')
+
   enviaDadosChamado(){
     if(this.chamadosForm.value.local != '' && this.chamadosForm.value.ramal != '' && this.chamadosForm.value.desc_problema != ''){
-    this.chamadosForm.value.id_usuario = localStorage.getItem('id_usuario');
+      let user = parseInt(this.id_usuario)
+    this.chamadosForm.value.id_usuario = user
     console.log(this.chamadosForm.value)
     this.chamadosService.create_chamado(this.chamadosForm.value).then((data: any) =>{
       console.log(data)

@@ -1,0 +1,27 @@
+<h1>Cadastrar Usuário</h1>
+
+<form [formGroup]="tecnicoForm" (ngSubmit)="enviaDadosUsuario()">
+    <div class="nome">
+        <label>Nome</label>
+        <input type="text" formControlName="nome"  name="nome" required>
+    </div>
+
+    <div class="username">
+        <label>username : </label>
+        <input type="text" formControlName="username" name="username" required>
+    </div>
+
+    <div class="email">
+        <label>Especialidade : </label>
+        <input type="text" formControlName="especialidade" name="especialidade" required>
+    </div>
+
+    <div class="nascimento">
+        <label>Senha : </label>
+        <input type="text" formControlName="user_passw" name="senha" required>
+    </div>
+    
+    <div class="enviar">
+        <button type="submit" [disabled]="!tecnicoForm.valid">ENVIAR</button>
+    </div>
+</form>

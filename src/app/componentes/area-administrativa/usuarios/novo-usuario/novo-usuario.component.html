@@ -1,0 +1,48 @@
+<h1>Cadastrar Usuário</h1>
+
+<form [formGroup]="usuarioForm" (ngSubmit)="enviaDadosUsuario()">
+    <div class="nome">
+        <label>Nome</label>
+        <input type="text" formControlName="nome"  name="nome" required>
+    </div>
+
+    <div class="username">
+        <label>username : </label>
+        <input type="text" formControlName="username" name="username" required>
+    </div>
+
+    <div class="email">
+        <label>E-mail : </label>
+        <input type="text" formControlName="email" name="email" required>
+    </div>
+
+    <div class="nascimento">
+        <label>Nascimento : </label>
+        <input type="text" formControlName="nascimento" name="nascimento" required>
+    </div>
+
+    <div class="setor">
+        <label>Setor : </label>
+        <input type="text" formControlName="setor" name="setor" required>
+    </div>
+
+    <div class="ramal">
+        <label>Ramal : </label>
+        <input type="number" formControlName="ramal" name="ramal" required>
+    </div>
+
+
+    <div class="senha">
+        <label>Senha : </label>
+        <input type="password" formControlName="user_passw" name="user_passw" required>
+    </div>
+
+    <div class="nivel">
+        <label>Nivel : </label>
+        <input type="text" formControlName="nivel" name="nivel" required>
+    </div>
+
+    <div class="enviar">
+        <button type="submit" [disabled]="!usuarioForm.valid">ENVIAR</button>
+    </div>
+</form>

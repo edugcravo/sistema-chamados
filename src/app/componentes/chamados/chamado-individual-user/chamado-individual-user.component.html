@@ -66,17 +66,19 @@
 
 
               
-                      <div class="resolucao_problema" *ngIf="status != 'cancelado'">
+                      <div class="resolucao_problema" *ngIf="status != 'cancelado' && status != 'finalizado'">
                         <label >Resposta : </label>
                         <textarea formControlName="resolucao_problema" [(ngModel)]="resolucao" name="resolucao_problema" placeholder="resposta" ></textarea>
                       </div>
 
                       <div class="enviar" >
-                        <button type="button" (click)="cancelarChamado()" class="cancelar" *ngIf="status != 'cancelado'">Cancelar chamado</button>
+                        <button type="button" (click)="cancelarChamado()" class="cancelar" *ngIf="status != 'cancelado' && status != 'finalizado'">Cancelar chamado</button>
 
-                        <button type="button" (click)="reabrirChamado()" class="cancelar" *ngIf="status == 'cancelado'">Reabrir chamado</button>
+                        <button type="button" (click)="finalizarChamado()" class="finalizar" *ngIf="status != 'cancelado' && status != 'finalizado'">Finalizar chamado</button>
 
-                        <button type="submit" class="enviar_botao" *ngIf="status != 'cancelado'" [disabled]="!chamadosForm.valid">Responder chamado</button>
+                        <button type="button" (click)="reabrirChamado()" class="cancelar" *ngIf="status == 'cancelado' || status == 'finalizado'">Reabrir chamado</button>
+
+                        <button type="submit" class="enviar_botao" *ngIf="status != 'cancelado' && status != 'finalizado'" [disabled]="!chamadosForm.valid">Responder chamado</button>
                       </div>
                       </form>
                     </div>

@@ -188,6 +188,16 @@ label {
     border-radius: 10px;
 }
 
+.cancelar{
+    background: red !important;
+    color: white;
+}
+
+.finalizar{
+    background: rgb(93, 93, 214) !important;
+    color: white;
+}
+
 .enviar_botao{
     background-color: green !important;
     color: white !important;

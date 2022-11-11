@@ -19,22 +19,38 @@
 
 .bloco_superior{
     background-color: white;
-    height: 30vh;
+    height: 35vh;
+    display: flex;
 }
 
 .blocos_inferiores{
     display: flex;
-    margin-top: 40px;
+    margin-top: 14px;
     justify-content: space-between;
 }
 
 .bloco_direita, .bloco_esquerda{
     text-align: center;
     width: 45%;
-    height: 382px;
+    height: 350px;
     background-color: white;
+    box-shadow: 0px 1px 22px -12px #607d8b;
 }
 
+.bloco_direita{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bloco_direita button{
+    background: #162D44;
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    color: white;
+
+}
 
 .nome, .username, .email, .nascimento, .setor, .ramal, .senha, .nivel{
 display: flex;
@@ -79,4 +95,103 @@ input:-webkit-autofill:focus {
 
 ::ng-deep .nz-disable-td.ant-table-cell{
     display: none !important;
+}
+
+.cadastrar-user button{
+    background: #162D44;
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    color: white;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.cadastrar-user{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60%;
+}
+
+.direita, .esquerda{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.direita{
+    border-left: 1px solid black;
+}
+
+
+.bloco_esquerda p{
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+canvas{
+    max-height: 209px !important;
+    position: relative;
+    top: -56px;
+}
+
+.grafico{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 18px solid #f6f6f6;
+    box-shadow: 0px 1px 22px -12px #607d8b;
+}
+
+.grafico p{
+    position: relative;
+    top: 90px;
+    font-size: 32px;
+    margin-bottom: 0px;
+}
+
+.infos{
+    width: 40%;
+    text-align: center;
+    box-shadow: 0px 1px 22px -12px #607d8b;
+}
+
+.conteudo_infos{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 50%;
+    flex-wrap: wrap;
+}
+
+.bloco_infos{
+    width: 45%;
+    border: 1px solid #c6c6c6;
+    border-bottom: 3px solid #162D44;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.bloco_infos p{
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.qtd{
+    /* display: flex; */
+    /* margin-left: 14px; */
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.info-nome{
+    margin-bottom: 10px;
+}
+
+.nome{
+    margin-bottom: 0px !important;
 }

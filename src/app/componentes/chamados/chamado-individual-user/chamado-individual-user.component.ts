@@ -64,7 +64,7 @@ export class ChamadoIndividualUserComponent implements OnInit {
     let dadosForm = {
       resolucao_problema: this.chamadosForm.value.resolucao_problema,
       tipo_problema: this.problemaSelecionado,
-      status: "finalizado"
+      status: "em andamento"
     }
     this.chamadoService.atualiza_chamado(this.chamado.id ,dadosForm, tecnico).then((data: any) =>{
 
@@ -109,6 +109,33 @@ export class ChamadoIndividualUserComponent implements OnInit {
           showConfirmButton: false,
           icon:'success',
           title: 'Chamado cancelado com sucesso !'
+        })
+      this.chamadoService.atualiza_status_chamado(this.chamado.id ,body, tecnico)
+      this.router.navigate(['visualizacao-chamado']);
+      }
+    })
+  }
+
+  finalizarChamado(){
+    let tecnico = 1
+    let body = {
+      "status": "finalizado"
+    }
+    Swal.fire({
+      title: 'Tem certeza que deseja finalizar?',
+      text: "Ao cancelar, não podera ser revertido!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sim!'
+    }).then((result: any) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          timer: 2000,
+          showConfirmButton: false,
+          icon:'success',
+          title: 'Chamado finalizado com sucesso !'
         })
       this.chamadoService.atualiza_status_chamado(this.chamado.id ,body, tecnico)
       this.router.navigate(['visualizacao-chamado']);
