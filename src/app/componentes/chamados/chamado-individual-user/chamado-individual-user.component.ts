@@ -1,6 +1,7 @@
 import { group } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { ChamadosService } from 'src/app/services/chamados.service';
 import Swal from 'sweetalert2';
@@ -26,7 +27,7 @@ export class ChamadoIndividualUserComponent implements OnInit {
   status: any;
 
 
-  constructor(private router: Router, private chamadoService: ChamadosService, private fb: UntypedFormBuilder) { 
+  constructor(private router: Router, private chamadoService: ChamadosService, private fb: UntypedFormBuilder, private _sanitizer:DomSanitizer) { 
     this.chamadosForm = this.fb.group({
       resolucao_problema: ['', [Validators.required]],
       status: [''],
@@ -53,6 +54,12 @@ export class ChamadoIndividualUserComponent implements OnInit {
       this.usuarioChamado = data.usuario
       this.tecnicoChamado = data.tecnico
       this.problemaSelecionado = data.problema
+      console.log(data)
+
+
+      this.chamado.arquivo = this._sanitizer.bypassSecurityTrustResourceUrl(
+        'data:image/jpg;base64,' + data.chamado.arquivo)
+
     })
   }
 

@@ -34,6 +34,12 @@ import { TecnicosComponent } from './componentes/area-administrativa/tecnicos/te
 import { NovoTecnicoComponent } from './componentes/area-administrativa/tecnicos/novo-tecnico/novo-tecnico.component';
 import { NgxChartModule } from 'ngx-chart';
 import { LogsComponent } from './componentes/area-administrativa/logs/logs.component';
+import { NzUploadModule } from 'ng-zorro-antd/upload';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+
+
+
 
 @NgModule({
   declarations: [	
@@ -73,7 +79,10 @@ import { LogsComponent } from './componentes/area-administrativa/logs/logs.compo
     NzSelectModule,
     NzTableModule,
     MatSnackBarModule,
-    NgxChartModule
+    NgxChartModule,
+    NzUploadModule,
+    NzModalModule,
+    NzIconModule
     
   ],
   providers: [HttpClient],
