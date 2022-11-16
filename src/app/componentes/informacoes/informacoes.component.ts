@@ -90,10 +90,26 @@ export class InformacoesComponent implements OnInit {
 
   enviaDados(){
     this.bloquear = true
-    this.loginService.atualiza_user(this.usuario.id, {img_perfil: this.base64}).then(dados =>{
-      console.log(dados)
-      this.bloquear = false
-    })
+    if(this.nomeUsuario == null){
+      this.loginService.atualiza_tecnico(this.usuario.id, {img_perfil: this.base64}).then(dados =>{
+        console.log(dados)
+        setTimeout(() => {
+          this.bloquear = false
+          window.location.reload()
+        }, 500);
+  
+      })
+    }else{
+      this.loginService.atualiza_user(this.usuario.id, {img_perfil: this.base64}).then(dados =>{
+        console.log(dados)
+        setTimeout(() => {
+          this.bloquear = false
+          window.location.reload()
+        }, 500);
+  
+      })
+    }
+    
   }
 
 }

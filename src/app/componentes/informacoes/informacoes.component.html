@@ -12,7 +12,9 @@
 
                     <div class="lado_esquerdo">
                         <h1>Foto de perfil</h1>
-                        <img [src]="usuario.img_perfil" />
+                        <!-- <img [src]="usuario.img_perfil" /> -->
+                        <nz-avatar nzIcon="user" [nzSrc]="usuario.img_perfil" class="user"></nz-avatar>
+
                         <!-- <img src="../../../../../assets/imagens/perfil-usuarios.png" alt=""> -->
                     </div>
 
@@ -77,7 +79,7 @@
                                 </nz-modal>
                             </div>
 
-                            <button (click)="enviaDados()" class="enviar" [disabled]="bloquear == true">Enviar</button>
+                            <button (click)="enviaDados()" class="enviar" [disabled]="bloquear == true"><p *ngIf="bloquear == false">Enviar</p> <p *ngIf="bloquear == true"><nz-spin nzSimple></nz-spin> </p> </button>
 
                         </div>
                     </div>

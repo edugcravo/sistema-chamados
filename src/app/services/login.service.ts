@@ -88,4 +88,17 @@ export class LoginService {
       })
     })
   }
+
+
+  atualiza_tecnico(id:any, body: any){
+    console.log
+    let params = new HttpParams()
+      .set('user_id', id)
+
+    return new Promise(resolve => {
+      this.http.post(this.url + '/update_image_tecnico', body, { headers: this.headers, params }).subscribe(data => {
+        resolve(data)
+      })
+    })
+  }
 }

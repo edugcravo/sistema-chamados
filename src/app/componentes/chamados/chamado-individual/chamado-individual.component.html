@@ -41,7 +41,7 @@
                       </div>
 
                       <div class="arquivo">
-                        <label >Arquivos anexados: </label>
+                        <label >Arquivos anexados: </label> <div (click)="visualizarArquivo()">Visualizar</div>
                       </div>
               
                       <div class="descricao_problema">
@@ -89,7 +89,7 @@
 
                 <div class="bloco_direita_esquerda">
                   <h1>Foto de perfil</h1>
-                  <img src="../../../../assets/imagens/perfil-usuarios.png" alt="">
+                  <nz-avatar nzIcon="user" [nzSrc]="usuarioChamado.img_perfil" class="user"></nz-avatar>
                 </div>
 
                 <div class="bloco_direita_direita">
@@ -102,6 +102,7 @@
                 </div>
 
               </div>
+
             </div>
         </div>
       

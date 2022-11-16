@@ -56,6 +56,10 @@ export class ChamadoIndividualUserComponent implements OnInit {
       this.problemaSelecionado = data.problema
       console.log(data)
 
+      this.usuarioChamado = data.usuario
+
+      this.tecnicoChamado.img_perfil = this._sanitizer.bypassSecurityTrustResourceUrl(
+        'data:image/jpg;base64,' + this.tecnicoChamado.img_perfil)      
 
       this.chamado.arquivo = this._sanitizer.bypassSecurityTrustResourceUrl(
         'data:image/jpg;base64,' + data.chamado.arquivo)

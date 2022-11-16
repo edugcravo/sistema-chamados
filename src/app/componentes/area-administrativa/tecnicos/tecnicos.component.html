@@ -1,5 +1,5 @@
 <div class="topo">
-  <h1>TECNICOS</h1>
+  <h1>TÉCNICOS</h1>
   <img src="../../../assets/imagens/sair_modal.png" alt="" mat-dialog-close>
 </div>
 
@@ -16,7 +16,7 @@
       <p *ngFor="let item of data" (click)="novoForm(item)" [ngClass]="{'selected': item.nome == nomeAtual}">{{item.nome}}</p>
     </div>
 
-    <div class="novo_esquerda" (click)="openDialogNovoTecnico()"><img src="../../../assets/imagens/add.png" alt="">NOVO TECNICO</div>
+    <div class="novo_esquerda" (click)="openDialogNovoTecnico()"><img src="../../../assets/imagens/add.png" alt="">NOVO TÉCNICO</div>
 
   </div>
 

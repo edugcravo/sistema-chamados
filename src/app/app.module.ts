@@ -37,8 +37,8 @@ import { LogsComponent } from './componentes/area-administrativa/logs/logs.compo
 import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-
-
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
 
 
 @NgModule({
@@ -82,7 +82,9 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
     NgxChartModule,
     NzUploadModule,
     NzModalModule,
-    NzIconModule
+    NzIconModule,
+    NzAvatarModule,
+    NzSpinModule
     
   ],
   providers: [HttpClient],

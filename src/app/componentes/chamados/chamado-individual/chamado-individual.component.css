@@ -158,7 +158,7 @@ label {
     padding-left: 30px;
 }
 
-.id input, .local input, .ramal input, .problema input{
+.id input, .local input, .ramal input, .problema input, .arquivo div{
    width: 30%;
    border-radius: 5px;
    border-width: 1px;
@@ -166,11 +166,16 @@ label {
    padding-left: 10px;
 }
 
+.arquivo div{
+    display: flex;
+    align-items: center;
+}
+
 .arquivo{
-    width: 48%;
     display: flex;
     justify-content: flex-end;
-    margin-top: 25px;
+    margin-top: 15px;
+    width: 65%;
 }
 
 .enviar{
@@ -233,7 +238,7 @@ label {
     margin-top: 30px;
 }
 
-.bloco_direita_esquerda img{
+.bloco_direita_esquerda nz-avatar{
     height: 140px;
     width: 140px;
 }
