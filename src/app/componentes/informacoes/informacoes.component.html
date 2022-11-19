@@ -92,7 +92,7 @@
                 </div>
 
                 <div class="usuarios" *ngFor="let item of usuarioSetores">
-                    <nz-avatar nzIcon="user" [nzSrc]="usuarioSetores.img_perfil" class="user"></nz-avatar>
+                    <nz-avatar nzIcon="user" [nzSrc]="item.img_perfil" class="user"></nz-avatar>
                     <label>{{item.nome}}</label>
                 </div>
 

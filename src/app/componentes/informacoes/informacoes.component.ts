@@ -44,9 +44,12 @@ export class InformacoesComponent implements OnInit {
       console.log(data)
       this.usuario = data.usuario
       this.usuarioSetores = data?.usuarios_setores
-
-      this.usuarioSetores.img_perfil = this._sanitizer.bypassSecurityTrustResourceUrl(
-        'data:image/jpg;base64,' + this.usuarioSetores.img_perfil)
+      console.log(this.usuarioSetores)
+      for(let item of this.usuarioSetores){
+        item.img_perfil = this._sanitizer.bypassSecurityTrustResourceUrl(
+          'data:image/jpg;base64,' + item.img_perfil)
+      }
+      
 
       this.usuario.img_perfil = this._sanitizer.bypassSecurityTrustResourceUrl(
         'data:image/jpg;base64,' + this.usuario.img_perfil)
