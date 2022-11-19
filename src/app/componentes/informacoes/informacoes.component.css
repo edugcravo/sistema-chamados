@@ -131,7 +131,7 @@ nz-avatar{
     margin-left: 20px;
 }
 
-.usuarios img{
+.usuarios nz-avatar{
     height: 75px;
     width: 75px;
 }
