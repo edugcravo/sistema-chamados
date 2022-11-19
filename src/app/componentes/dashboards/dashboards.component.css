@@ -4,6 +4,10 @@
     font-family: "proxima-nova" !important;
 }
 
+h1{
+    margin-bottom: 0px !important;
+}
+
 .container{
     width: 82%;
     background-color: #f6f6f6;
@@ -58,7 +62,7 @@ label {
 
 
 .blocos{
-    width: 23%;
+    width: 30%;
     height: 125px;
     background-color: white;
 }
