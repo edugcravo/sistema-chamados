@@ -97,7 +97,7 @@ input:-webkit-autofill:focus {
 }
 
 .fundo{
-    width: 50%;
+    width:45%;
 }
 
 ::ng-deep address, dl, ol, p, pre, ul {
