@@ -28,8 +28,17 @@ import { AreaAdministrativaComponent } from './componentes/area-administrativa/a
 import { NzTableModule } from 'ng-zorro-antd/table';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ChamadoIndividualUserComponent } from './componentes/chamados/chamado-individual-user/chamado-individual-user.component';
-
-
+import { UsuariosComponent } from './componentes/area-administrativa/usuarios/usuarios.component';
+import { NovoUsuarioComponent } from './componentes/area-administrativa/usuarios/novo-usuario/novo-usuario.component';
+import { TecnicosComponent } from './componentes/area-administrativa/tecnicos/tecnicos.component';
+import { NovoTecnicoComponent } from './componentes/area-administrativa/tecnicos/novo-tecnico/novo-tecnico.component';
+import { NgxChartModule } from 'ngx-chart';
+import { LogsComponent } from './componentes/area-administrativa/logs/logs.component';
+import { NzUploadModule } from 'ng-zorro-antd/upload';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
 
 
 @NgModule({
@@ -46,7 +55,12 @@ import { ChamadoIndividualUserComponent } from './componentes/chamados/chamado-i
     MenuSuperiorComponent,
     ChamadosVisualizacaoUserComponent,
     AreaAdministrativaComponent,
-    ChamadoIndividualUserComponent
+    ChamadoIndividualUserComponent,
+    UsuariosComponent,
+    NovoUsuarioComponent,
+    TecnicosComponent,
+    NovoTecnicoComponent,
+    LogsComponent
    ],
   imports: [
     BrowserModule,
@@ -64,7 +78,13 @@ import { ChamadoIndividualUserComponent } from './componentes/chamados/chamado-i
     NzCarouselModule,
     NzSelectModule,
     NzTableModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    NgxChartModule,
+    NzUploadModule,
+    NzModalModule,
+    NzIconModule,
+    NzAvatarModule,
+    NzSpinModule
     
   ],
   providers: [HttpClient],

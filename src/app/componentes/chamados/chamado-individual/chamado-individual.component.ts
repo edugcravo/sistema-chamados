@@ -1,8 +1,11 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { ChamadosService } from 'src/app/services/chamados.service';
 import Swal from 'sweetalert2';
+import { VisualizarArquivoComponent } from '../visualizar-arquivo/visualizar-arquivo.component';
 
 
 
@@ -24,7 +27,7 @@ export class ChamadoIndividualComponent implements OnInit {
   problemaSelecionado: any;
 
 
-  constructor(private router: Router, private chamadoService: ChamadosService, private fb: UntypedFormBuilder) { 
+  constructor(private router: Router, public dialog: MatDialog ,private chamadoService: ChamadosService, private fb: UntypedFormBuilder, private _sanitizer:DomSanitizer) { 
     this.chamadosForm = this.fb.group({
       resolucao_problema: ['', [Validators.required]],
       status: [''],
@@ -49,16 +52,25 @@ export class ChamadoIndividualComponent implements OnInit {
       this.chamado = data.chamado
       this.usuarioChamado = data.usuario
 
-      this.problemaSelecionado = this.chamado.tipo_problema
+      this.usuarioChamado.img_perfil = this._sanitizer.bypassSecurityTrustResourceUrl(
+        'data:image/jpg;base64,' + this.usuarioChamado.img_perfil)      
+
+      this.chamado.arquivo = this._sanitizer.bypassSecurityTrustResourceUrl(
+        'data:image/jpg;base64,' + this.chamado.arquivo)
+
+      console.log(this.chamado)
+      this.problemaSelecionado = data.problema
     })
   }
+
+  resolucao: any;
 
   enviaDadosChamado(){
     let tecnico = 0
     let dadosForm = {
       resolucao_problema: this.chamadosForm.value.resolucao_problema,
       tipo_problema: this.chamadosForm.value.tipo_problema,
-      status: "finalizado"
+      status: "em andamento"
     }
     this.chamadoService.atualiza_chamado(this.chamado.id ,dadosForm, tecnico).then((data: any) =>{
 
@@ -77,6 +89,7 @@ export class ChamadoIndividualComponent implements OnInit {
           title: 'Resposta enviada com sucesso !'
         })
         this.obterAcompanhamento()
+        this.resolucao = ''
       }
     })
   }
@@ -117,5 +130,13 @@ export class ChamadoIndividualComponent implements OnInit {
     
       
     })
+  }
+
+
+  visualizarArquivo(){
+      this.dialog.open(VisualizarArquivoComponent, {
+        data: this.chamado
+      });
+    
   }
 }

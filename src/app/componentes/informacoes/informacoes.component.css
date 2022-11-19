@@ -69,9 +69,19 @@ label {
     background-color: white;
 }
 
-.lado_esquerdo img{
+nz-avatar{
     width: 200px;
     height: 200px;
+}
+
+.img button{
+    background: #162D44;
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    color: white;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .nome_lado_direito, .nascimento, .email, .setor, .ramal, .setor, .chamados, .especialidade{
@@ -154,4 +164,23 @@ label {
 .nome img{
     width: 50px;
     height: 50px;
+}
+
+
+.enviar{
+    margin-bottom: 30px;
+}
+
+.enviar p{
+    margin-bottom: 0px !important;
+}
+
+
+nz-upload{
+    display: flex !important;
+}
+
+.img{
+    display: flex;
+    align-items: center;
 }

@@ -1,0 +1,126 @@
+p{
+    margin: 0;
+  }
+  
+  .topo{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;  }
+  
+  .container{
+    display: flex;
+  }
+  
+  .bloco_esquerda{
+    width: 45%;
+  }
+  
+  .bloco_direita{
+    width: 50%;
+  }
+  
+  .bloco_direita{
+    border: 1px solid #E5E5E5;
+    border-radius: 10px;
+    padding: 12px;
+  }
+  
+  .bloco_direita input{
+    border: 1px solid #BFBFBF;
+  border-radius: 6px;
+  padding: 6px;
+  }
+  
+  .grupos{
+    display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  
+  
+  .bloco_esquerda p{
+    margin-bottom: 5px !important;
+  }
+  
+  
+  /* .equipe{
+    display: flex;
+      align-items: flex-end;
+  } */
+  
+  .adicionar{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #404040;
+      border-radius: 5px;
+      width: 188px;
+      padding: 5px;
+  }
+  
+  .adicionar p{
+    margin: 0px 0px 0px 5px !important;
+  }
+  
+  .titulo{
+    margin-bottom: 10px;
+  }
+  
+  
+  .descricao{
+    margin-bottom: 30px;
+  }
+  
+  
+  .bloco_equipe{
+    margin-top: 15px;
+  }
+  
+  
+  .novo_esquerda{
+    margin-top: 30px;
+  }
+  
+  
+  .selected{
+    background: #E5E5E5;
+  border-radius: 6px;
+  }
+  
+  .grupos p{
+    padding: 12px;
+    width: 95%;
+  }
+  
+  
+  .botoes{
+    display: flex;
+      justify-content: flex-end;
+      margin-top: 15px;
+  }
+  
+  .salvar{
+    background: #EB8044;
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    color: white;
+  
+    margin-left: 15px;
+  }
+  
+  .cancelar{
+    border: none;
+    background: white;
+  }
+  
+  
+  form img{
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+  
+  .excluir{
+    margin-top: 15px;
+  }
+  

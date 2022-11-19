@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 
 import { ChamadosService } from 'src/app/services/chamados.service';
 import { ChamadoIndividualComponent } from './chamado-individual/chamado-individual.component';
+import { RelatorioComponent } from './relatorio/relatorio.component';
 
 @Component({
   selector: 'app-chamados',
@@ -50,5 +51,42 @@ export class ChamadosComponent implements OnInit {
     //   data: id
     // });
   }
+
+  dadosEnviar: any = [];
+
+  checarIndividualCheckbox(){
+    console.log(this.chamado.chamado)
+    this.chamado?.chamado.forEach((element: any, index: any)=> {
+      let check = document.getElementById(element.id) as HTMLInputElement
+
+        if(check){
+          if(check.checked){
+            console.log('ta checkado')
+
+              if(!this.dadosEnviar.includes(element)){
+                this.dadosEnviar.push(element)
+              }
+          
+          }else{
+            this.dadosEnviar.splice(index,1)
+            if(this.dadosEnviar.includes(element)){
+              this.dadosEnviar.splice(index,1)
+          }}
+        }
+
+    })
+
+    console.log(this.dadosEnviar)
+
+  }
+
+
+  gerarRelatorio(){
+    this.dialog.open(RelatorioComponent, {
+      data: this.dadosEnviar
+    });
+  
+}
+  
 
 }

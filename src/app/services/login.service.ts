@@ -48,9 +48,55 @@ export class LoginService {
   }
 
 
+  criaTecnico(body: any){
+    console.log(body)
+    return new Promise(resolve => {
+      this.http.post(this.url + '/cria_tecnico', body, { headers: this.headers }).subscribe(data => {
+        resolve(data)
+      })
+    })
+  }
+
   retornaTodosUsers(){
     return new Promise(resolve => {
       this.http.get(this.url + '/retorna_users', { headers: this.headers }).subscribe(data => {
+        console.log(data)
+        resolve(data)
+      })
+    })
+  }
+
+
+  retornaTodosTecnicos(){
+    return new Promise(resolve => {
+      this.http.get(this.url + '/retorna_tecnicos', { headers: this.headers }).subscribe(data => {
+        console.log(data)
+        resolve(data)
+      })
+    })
+  }
+
+
+  atualiza_user(id:any, body: any){
+    console.log
+    let params = new HttpParams()
+      .set('user_id', id)
+
+    return new Promise(resolve => {
+      this.http.post(this.url + '/update_image', body, { headers: this.headers, params }).subscribe(data => {
+        resolve(data)
+      })
+    })
+  }
+
+
+  atualiza_tecnico(id:any, body: any){
+    console.log
+    let params = new HttpParams()
+      .set('user_id', id)
+
+    return new Promise(resolve => {
+      this.http.post(this.url + '/update_image_tecnico', body, { headers: this.headers, params }).subscribe(data => {
         resolve(data)
       })
     })

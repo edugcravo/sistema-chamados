@@ -1,0 +1,51 @@
+<div class="topo">
+  <h1>USUÁRIOS</h1>
+  <img src="../../../assets/imagens/sair_modal.png" alt="" mat-dialog-close>
+</div>
+
+<form
+  id="new-collection-form-container"
+  [formGroup]="usuarioForm"
+  (ngSubmit)="EnviarDados()"
+>
+
+<div class="container">
+  <div class="bloco_esquerda">
+
+    <div class="grupos">
+      <p *ngFor="let item of data" (click)="novoForm(item)" [ngClass]="{'selected': item.nome == nomeAtual}">{{item.nome}}</p>
+    </div>
+
+    <div class="novo_esquerda" (click)="openDialogNovoUser()"><img src="../../../assets/imagens/add.png" alt="">NOVO USUÁRIO</div>
+
+  </div>
+
+  <div class="bloco_direita">
+
+    <div class="titulo">
+      <p>NOME</p>
+      <input type="text" placeholder="Nome" formControlName="nome">
+    </div>
+
+    <div class="titulo">
+      <p>E-MAIL</p>
+      <input type="text" placeholder="Nome" formControlName="email">
+    </div>
+
+    <div class="descricao">
+      <p>SETOR</p>
+      <input type="text" placeholder="Descrição" formControlName="setor">
+    </div>
+
+
+  </div>
+
+
+</div>
+
+</form>
+
+<div class="botoes">
+  <button class="cancelar">CANCELAR</button>
+  <button class="salvar" (click)="EnviarDados()">SALVAR</button>
+</div>

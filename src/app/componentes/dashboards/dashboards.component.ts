@@ -117,7 +117,7 @@ export class DashboardsComponent implements OnInit {
         }
       }
 
-      this.listaLabels.push('Fechados', 'Aberto', 'cancelados')
+      this.listaLabels.push('Finalizados', 'Aberto', 'cancelados')
       this.listaValores.push(this.finalizados, this.andamento, this.cancelados)
 
       setTimeout(() => {

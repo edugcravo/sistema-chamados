@@ -9,10 +9,12 @@
       </div>
 
       <div class="lado_direito">
-        <img src="../../../../../assets/imagens/notificacao.png" alt="">
+        <!-- <img src="../../../../../assets/imagens/notificacao.png" alt=""> -->
 
         <div class="nome">
-          <img src="../../../../../assets/imagens/perfil-usuarios.png" alt="">
+          <!-- <img src="../../../../../assets/imagens/perfil-usuarios.png" alt=""> -->
+          <nz-avatar nzIcon="user" [nzSrc]="usuario?.img_perfil" class="user"></nz-avatar>
+          <!-- <img [src]="usuario.img_perfil" /> -->
           <p *ngIf="nomeUsuario">{{nomeUsuario}}</p>
           <p *ngIf="nomeTecnico">{{nomeTecnico}}</p> 
         </div>

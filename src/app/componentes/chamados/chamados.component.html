@@ -7,7 +7,7 @@
     <div class="chamados_abertos" >
       <p>Chamados Abertos : <span>{{chamado?.chamado?.length}}</span></p>
      
-
+      <p (click)="gerarRelatorio()">Gerar relatorio</p>
     </div>
 
     <div class="bloco_conteudo">
@@ -20,14 +20,16 @@
             <th class="id">Id</th>
             <th class="titulo_descricao">Descrição do problema</th>
             <th>Local</th>
+            <th>Status</th>
             <th>Nome do usuário</th>
           </tr>
-          <tr *ngFor="let item of chamado?.chamado" (click)="abreChamado(item.id)">
-            <td><input type="checkbox" name="" id=""></td>
-            <td class="id">{{item.id}}</td>
-            <td class="descricao">{{item.desc_problema}}</td>
-            <td>{{item.local}}</td>
-            <td>{{item.id_usuario}}</td>
+          <tr *ngFor="let item of chamado?.chamado" >
+            <td><input type="checkbox" name="" id="{{item.id}}" (change)="checarIndividualCheckbox()"></td>
+            <td class="id" (click)="abreChamado(item.id)">{{item.id}}</td>
+            <td class="descricao" (click)="abreChamado(item.id)">{{item.desc_problema}}</td>
+            <td (click)="abreChamado(item.id)">{{item.local}}</td>
+            <td (click)="abreChamado(item.id)">{{item.status}}</td>
+            <td (click)="abreChamado(item.id)">{{item.id_usuario}}</td>
           </tr>
           
         </table>

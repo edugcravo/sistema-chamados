@@ -1,6 +1,7 @@
 import { group } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { ChamadosService } from 'src/app/services/chamados.service';
 import Swal from 'sweetalert2';
@@ -26,7 +27,7 @@ export class ChamadoIndividualUserComponent implements OnInit {
   status: any;
 
 
-  constructor(private router: Router, private chamadoService: ChamadosService, private fb: UntypedFormBuilder) { 
+  constructor(private router: Router, private chamadoService: ChamadosService, private fb: UntypedFormBuilder, private _sanitizer:DomSanitizer) { 
     this.chamadosForm = this.fb.group({
       resolucao_problema: ['', [Validators.required]],
       status: [''],
@@ -48,23 +49,34 @@ export class ChamadoIndividualUserComponent implements OnInit {
 
   obterChamado(){
     this.chamadoService.retorna_chamado_por_id(this.IdChamado).then((data: any) =>{
-      console.log(data)
       this.status = data.chamado.status
       this.chamado = data.chamado
       this.usuarioChamado = data.usuario
       this.tecnicoChamado = data.tecnico
-      this.problemaSelecionado = this.chamado.tipo_problema
+      this.problemaSelecionado = data.problema
+      console.log(data)
+
+      this.usuarioChamado = data.usuario
+
+      this.tecnicoChamado.img_perfil = this._sanitizer.bypassSecurityTrustResourceUrl(
+        'data:image/jpg;base64,' + this.tecnicoChamado.img_perfil)      
+
+      this.chamado.arquivo = this._sanitizer.bypassSecurityTrustResourceUrl(
+        'data:image/jpg;base64,' + data.chamado.arquivo)
+
     })
   }
 
+  resolucao: any;
+
   enviaDadosChamado(){
+    console.log(this.problemaSelecionado)
     let tecnico = 1
     let dadosForm = {
       resolucao_problema: this.chamadosForm.value.resolucao_problema,
-      tipo_problema: this.chamadosForm.value.tipo_problema,
-      status: "finalizado"
+      tipo_problema: this.problemaSelecionado,
+      status: "em andamento"
     }
-
     this.chamadoService.atualiza_chamado(this.chamado.id ,dadosForm, tecnico).then((data: any) =>{
 
       if (!data.status) {
@@ -81,6 +93,7 @@ export class ChamadoIndividualUserComponent implements OnInit {
           icon:'success',
           title: 'Resposta enviada com sucesso !'
         })
+        this.resolucao = ''
         this.obterAcompanhamento()
       }
     })
@@ -114,11 +127,38 @@ export class ChamadoIndividualUserComponent implements OnInit {
     })
   }
 
+  finalizarChamado(){
+    let tecnico = 1
+    let body = {
+      "status": "finalizado"
+    }
+    Swal.fire({
+      title: 'Tem certeza que deseja finalizar?',
+      text: "Ao cancelar, não podera ser revertido!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sim!'
+    }).then((result: any) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          timer: 2000,
+          showConfirmButton: false,
+          icon:'success',
+          title: 'Chamado finalizado com sucesso !'
+        })
+      this.chamadoService.atualiza_status_chamado(this.chamado.id ,body, tecnico)
+      this.router.navigate(['visualizacao-chamado']);
+      }
+    })
+  }
+
 
   reabrirChamado(){
     let tecnico = 1
     let body = {
-      "status": "aberto"
+      "status": "em andamento"
     }
     Swal.fire({
       title: 'Tem certeza que deseja reabrir o chamado?',
@@ -153,8 +193,7 @@ export class ChamadoIndividualUserComponent implements OnInit {
   obterAcompanhamento(){
     this.chamadoService.retorna_acompanhamento(this.IdChamado).then((dados: any) =>{
       this.respostas = dados.respostas
-
-      
+        console.log(dados)
     })
   }
 }

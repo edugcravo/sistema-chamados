@@ -6,7 +6,7 @@
   <div class="bloco_principal">
 
     <div class="conteudo_bloco">
-      <h1 class="sobre">Sobre os tecnicos</h1>
+      <h1 class="sobre">Sobre os técnicos</h1>
 
       <div class="usuarios">
 
@@ -16,7 +16,7 @@
           <div nz-carousel-content *ngFor="let item of tecnicos">
             
               <div class="centro">
-                <img src="../../../../../assets/imagens/perfil-usuarios.png" alt="">
+                <nz-avatar nzIcon="user" [nzSrc]="item.img_perfil" class="user"></nz-avatar>
                 <h1>{{item.nome}}</h1>
                 <h2>Quantidade de chamados: <b>{{item.qtd_chamado}} </b></h2>
                 <h2 class="especialidade">Especialidade: <b>{{item.especialidade}} </b></h2>

@@ -41,7 +41,7 @@
                       </div>
 
                       <div class="arquivo">
-                        <label >Arquivos anexados: </label>
+                        <label >Arquivos anexados: </label> <div (click)="visualizarArquivo()">Visualizar</div>
                       </div>
               
                       <div class="descricao_problema">
@@ -53,7 +53,7 @@
 
                       <div [ngClass]="item.tecnico == 0 ? 'resposta' : 'resposta2'" *ngFor="let item of respostas">
                         <label *ngIf="item.tecnico == 0">Resposta tecnico: </label>
-                        <label *ngIf="item.tecnico == 1">Resposta usuario: </label>
+                        <label *ngIf="item.tecnico == 1">Resposta {{usuarioChamado?.nome}}: </label>
 
                         <div class="resposta-conteudo">
                           {{item?.resposta}}
@@ -62,13 +62,13 @@
 
 
               
-                      <div class="resolucao_problema">
+                      <div class="resolucao_problema" *ngIf="chamado.status != 'cancelado' && chamado.status != 'finalizado'">
                         <label >Resposta : </label>
-                        <textarea formControlName="resolucao_problema" name="resolucao_problema" placeholder="resposta" ></textarea>
+                        <textarea formControlName="resolucao_problema" [(ngModel)]="resolucao" name="resolucao_problema" placeholder="resposta" ></textarea>
                       </div>
 
-                      <div class="enviar">
-                        <button type="button" (click)="cancelarChamado()" class="cancelar">Cancelar chamado</button>
+                      <div class="enviar" *ngIf="chamado.status != 'cancelado' && chamado.status != 'finalizado'">
+
 
                         <button type="submit" class="enviar_botao" [disabled]="!chamadosForm.valid">Responder chamado</button>
                       </div>
@@ -89,7 +89,7 @@
 
                 <div class="bloco_direita_esquerda">
                   <h1>Foto de perfil</h1>
-                  <img src="../../../../assets/imagens/perfil-usuarios.png" alt="">
+                  <nz-avatar nzIcon="user" [nzSrc]="usuarioChamado.img_perfil" class="user"></nz-avatar>
                 </div>
 
                 <div class="bloco_direita_direita">
@@ -102,6 +102,7 @@
                 </div>
 
               </div>
+
             </div>
         </div>
       

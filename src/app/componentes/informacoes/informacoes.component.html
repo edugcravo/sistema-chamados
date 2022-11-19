@@ -12,7 +12,10 @@
 
                     <div class="lado_esquerdo">
                         <h1>Foto de perfil</h1>
-                        <img src="../../../../../assets/imagens/perfil-usuarios.png" alt="">
+                        <!-- <img [src]="usuario.img_perfil" /> -->
+                        <nz-avatar nzIcon="user" [nzSrc]="usuario.img_perfil" class="user"></nz-avatar>
+
+                        <!-- <img src="../../../../../assets/imagens/perfil-usuarios.png" alt=""> -->
                     </div>
 
                     <div class="lado_direito_conteudo">
@@ -49,6 +52,35 @@
                         <div class="chamados" *ngIf="nomeUsuario != null">
                             <label for="">Chamados Gerados: </label>
                             <p>45</p>
+                        </div>
+
+                        <div class="img">
+
+                            <div class="clearfix">
+                                <nz-upload
+                                nzListType="picture-card"
+                                [nzPreview]="handlePreview"
+                                [nzBeforeUpload]="beforeUpload"
+                                >
+                                <div>
+                                    <!-- <span nz-icon nzType="plus"></span> -->
+                                    <div style="margin-top: 8px">Upload</div>
+                                </div>
+                                </nz-upload>
+                                <nz-modal
+                                [nzVisible]="previewVisible"
+                                [nzContent]="modalContent"
+                                [nzFooter]="null"
+                                (nzOnCancel)="previewVisible = false"
+                                >
+                                <ng-template #modalContent>
+                                    <img [src]="previewImage" [ngStyle]="{ width: '100%' }" />
+                                </ng-template>
+                                </nz-modal>
+                            </div>
+
+                            <button (click)="enviaDados()" class="enviar" [disabled]="bloquear == true"><p *ngIf="bloquear == false">Enviar</p> <p *ngIf="bloquear == true"><nz-spin nzSimple></nz-spin> </p> </button>
+
                         </div>
                     </div>
                 </div>

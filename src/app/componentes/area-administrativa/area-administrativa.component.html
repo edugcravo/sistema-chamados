@@ -5,87 +5,47 @@
     <div class="conteudo">
 
         <div class="bloco_superior">
-            <h1>Área</h1>
+              <div class="infos">
+                    <h1>Chamados por técnicos:</h1>
+                    <div class="conteudo_infos">
+
+                        <div class="bloco_infos" *ngFor="let item of todosChamados?.tecnicos">
+                            <p class="qtd">{{item?.qtd_chamado}}</p>
+                            <p class="info-nome">{{item?.nome}}</p>
+
+                        </div>
+
+                    </div>
+              </div>
+
+              <div class="grafico">
+                <h1>Total de chamados:</h1>
+                <p>{{todosChamados?.chamado?.length}}</p>
+                <canvas id="myChart" #mychart></canvas>
+              </div>
         </div>
 
         <div class="blocos_inferiores">
             <div class="bloco_esquerda">
-                <h1>Cadastrar Usuário</h1>
-
-                <form 
-                    [formGroup]="usuarioForm"
-                    (ngSubmit)="enviaDadosUsuario()"
-                        >
-                    <div class="nome">
-                        <label>Nome</label>
-                        <input type="text" formControlName="nome"  name="nome" required>
+                <p>VISUALIZAR</p>
+                <div class="cadastrar-user">
+                    <div class="esquerda">
+                        <button (click)="openDialogUsers()">Usuários</button>
                     </div>
 
-                    <div class="username">
-                        <label>username : </label>
-                        <input type="text" formControlName="username" name="username" required>
+                    <div class="direita">
+                        <button (click)="openDialogTecnico()">Técnicos</button>
                     </div>
-
-                    <div class="email">
-                        <label>E-mail : </label>
-                        <input type="text" formControlName="email" name="email" required>
-                    </div>
-
-                    <div class="nascimento">
-                        <label>Nascimento : </label>
-                        <input type="text" formControlName="nascimento" name="nascimento" required>
-                    </div>
-
-                    <div class="setor">
-                        <label>Setor : </label>
-                        <input type="text" formControlName="setor" name="setor" required>
-                    </div>
-
-                    <div class="ramal">
-                        <label>Ramal : </label>
-                        <input type="number" formControlName="ramal" name="ramal" required>
-                    </div>
+                </div>
 
 
-                    <div class="senha">
-                        <label>Senha : </label>
-                        <input type="password" formControlName="user_passw" name="user_passw" required>
-                    </div>
+                
 
-                    <div class="nivel">
-                        <label>Nivel : </label>
-                        <input type="text" formControlName="nivel" name="nivel" required>
-                    </div>
-
-                    <div class="enviar">
-                    <button type="submit" [disabled]="!usuarioForm.valid">ENVIAR</button>
-                    </div>
-                    </form>
+                
             </div>
             
             <div class="bloco_direita">
-                <h1>Todos Usuários</h1>
-                <div class="table-operations">
-                  </div>
-                  <nz-table #basicTable>
-                    <thead>
-                      <tr>
-                        <th>Nome</th>
-                        <th>Nivel</th>
-                        <th>Ação</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr *ngFor="let item of todosUsuarios">
-                        <td>{{ item.nome }}</td>
-                        <td>{{ item.nivel }}</td>
-
-                        <td>
-                          <a>Visualizar</a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </nz-table>
+                <button (click)="openDialogLogs()">Visualizar Logs</button>
             </div>
         </div>
         
