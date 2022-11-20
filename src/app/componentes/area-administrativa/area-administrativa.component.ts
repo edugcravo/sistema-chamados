@@ -8,6 +8,7 @@ import { ChamadosService } from 'src/app/services/chamados.service';
 import { LoginService } from 'src/app/services/login.service';
 import Swal from 'sweetalert2';
 import { LogsComponent } from './logs/logs.component';
+import { ResumoComponent } from './resumo/resumo.component';
 import { TecnicosComponent } from './tecnicos/tecnicos.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 
@@ -122,10 +123,17 @@ export class AreaAdministrativaComponent implements OnInit {
     });
   }
 
+  openDialogResumo(): void {
+    this.dialog.open(ResumoComponent, {
+      width: '50%',
+      height: '600px'
+    });
+  }
+
   todosChamados: any;
 
   andamento: any = 0;
-  cancelado: any = 1;
+  cancelado: any = 0;
   totalChamados: any = 0;
   finalizados: any = 0;
 
@@ -142,6 +150,10 @@ export class AreaAdministrativaComponent implements OnInit {
 
         if(item.status == 'cancelado'){
           this.cancelado++
+        }
+
+        if(item.status == 'finalizado'){
+          this.finalizados++
         }
       }
       console.log(dados)
@@ -192,7 +204,7 @@ export class AreaAdministrativaComponent implements OnInit {
     new Chart(this.ctx, {
       type: 'doughnut',
       data: {
-        labels: ['Em andamento', 'Cancelados', 'finalizado'],
+        labels: ['Em andamento', 'Cancelados', 'Finalizado'],
         datasets: [{
           label: 'My First Dataset',
           data: [this.andamento, this.cancelado, this.finalizados],

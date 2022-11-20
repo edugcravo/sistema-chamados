@@ -27,14 +27,17 @@
 
         <div class="blocos_inferiores">
             <div class="bloco_esquerda">
-                <p>VISUALIZAR</p>
+                <p>Visualizar</p>
                 <div class="cadastrar-user">
                     <div class="esquerda">
                         <button (click)="openDialogUsers()">Usuários</button>
+                        <img src="../../../assets/imagens/people.png" alt="">
+
                     </div>
 
                     <div class="direita">
                         <button (click)="openDialogTecnico()">Técnicos</button>
+                        <img src="../../../assets/imagens/tecn.png" alt="">
                     </div>
                 </div>
 
@@ -46,6 +49,9 @@
             
             <div class="bloco_direita">
                 <button (click)="openDialogLogs()">Visualizar Logs</button>
+
+                <button (click)="openDialogResumo()">Visualizar relatórios</button>
+
             </div>
         </div>
         

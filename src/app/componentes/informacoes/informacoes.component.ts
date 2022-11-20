@@ -45,11 +45,13 @@ export class InformacoesComponent implements OnInit {
       this.usuario = data.usuario
       this.usuarioSetores = data?.usuarios_setores
       console.log(this.usuarioSetores)
-      for(let item of this.usuarioSetores){
-        item.img_perfil = this._sanitizer.bypassSecurityTrustResourceUrl(
-          'data:image/jpg;base64,' + item.img_perfil)
-      }
       
+      if(this.usuarioSetores != undefined){
+        for(let item of this.usuarioSetores){
+          item.img_perfil = this._sanitizer.bypassSecurityTrustResourceUrl(
+            'data:image/jpg;base64,' + item.img_perfil)
+        }
+      }
 
       this.usuario.img_perfil = this._sanitizer.bypassSecurityTrustResourceUrl(
         'data:image/jpg;base64,' + this.usuario.img_perfil)

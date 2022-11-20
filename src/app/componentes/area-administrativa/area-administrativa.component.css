@@ -120,6 +120,11 @@ input:-webkit-autofill:focus {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+
+.direita img, .esquerda img{
+    width: 200px;
 }
 
 .direita{
@@ -133,9 +138,9 @@ input:-webkit-autofill:focus {
 }
 
 canvas{
-    max-height: 209px !important;
+    max-height: 196px !important;
     position: relative;
-    top: -56px;
+    top: -78px;
 }
 
 .grafico{
@@ -149,7 +154,7 @@ canvas{
 
 .grafico p{
     position: relative;
-    top: 90px;
+    top: 60px;
     font-size: 32px;
     margin-bottom: 0px;
 }

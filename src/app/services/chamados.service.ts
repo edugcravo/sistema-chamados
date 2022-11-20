@@ -35,6 +35,19 @@ export class ChamadosService {
   }
 
 
+  retorna_chamado_por_filtro(setor: any, problema: any) {
+    let body = {
+      problema: problema,
+      setor: setor
+    }
+
+    return new Promise(resolve => {
+      this.http.post(this.url + '/chamado/retorna-por-filtro', body, { headers: this.headers }).subscribe(data => {
+        resolve(data)
+      })
+    })
+  }
+
   retorna_chamado_por_id_tecnico(id_tecnico: any) {
     let params = new HttpParams()
       .set('id_tecnico', id_tecnico)

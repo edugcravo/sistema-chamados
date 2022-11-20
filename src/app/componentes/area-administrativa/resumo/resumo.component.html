@@ -1,0 +1,48 @@
+<div class="filtro" >
+  <div class="ano">
+
+    <label for="">Setor:</label>
+    <mat-form-field appearance="fill">
+      <mat-label>Selecione...</mat-label>
+
+      <mat-select #matRefAno multiple [(ngModel)]="value_setor">
+
+        <input class="pesquisa_filtro" placeholder="Pesquisar" #valorbuscaAno
+          >
+        <button  class="pesquisa_filtro_botao">Limpar filtro</button>
+        <mat-option id="{{item}}" *ngFor="let item of setores ; let i = index;"
+          [value]="item">
+          {{item}}
+        </mat-option>
+
+      </mat-select>
+
+    </mat-form-field>
+  </div>
+
+  <div class="ano">
+
+    <label for="">Tipo do problema:</label>
+    <mat-form-field appearance="fill">
+      <mat-label>Selecione...</mat-label>
+
+      <mat-select #matRefAno multiple [(ngModel)]="value_problema">
+
+        <input class="pesquisa_filtro" placeholder="Pesquisar" #valorbuscaAno
+          >
+        <button  class="pesquisa_filtro_botao">Limpar filtro</button>
+        <mat-option id="{{item}}" *ngFor="let item of problemas ; let i = index;"
+          [value]="item.id">
+          {{item.tipo_problema}}
+        </mat-option>
+
+      </mat-select>
+
+    </mat-form-field>
+  </div>
+
+
+  <div style="display: flex; align-items: flex-end; justify-content: center;">
+    <button mat-raised-button color="primary" (click)="enviaDados()">Filtrar</button>
+  </div>
+</div>

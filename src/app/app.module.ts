@@ -39,6 +39,9 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { ResumoComponent } from './componentes/area-administrativa/resumo/resumo.component';
 
 
 @NgModule({
@@ -60,7 +63,8 @@ import { NzSpinModule } from 'ng-zorro-antd/spin';
     NovoUsuarioComponent,
     TecnicosComponent,
     NovoTecnicoComponent,
-    LogsComponent
+    LogsComponent,
+    ResumoComponent
    ],
   imports: [
     BrowserModule,
@@ -84,7 +88,9 @@ import { NzSpinModule } from 'ng-zorro-antd/spin';
     NzModalModule,
     NzIconModule,
     NzAvatarModule,
-    NzSpinModule
+    NzSpinModule,
+    MatSelectModule,
+    MatFormFieldModule
     
   ],
   providers: [HttpClient],
