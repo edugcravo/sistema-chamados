@@ -9,7 +9,6 @@
 
         <input class="pesquisa_filtro" placeholder="Pesquisar" #valorbuscaAno
           >
-        <button  class="pesquisa_filtro_botao">Limpar filtro</button>
         <mat-option id="{{item}}" *ngFor="let item of setores ; let i = index;"
           [value]="item">
           {{item}}
@@ -30,7 +29,6 @@
 
         <input class="pesquisa_filtro" placeholder="Pesquisar" #valorbuscaAno
           >
-        <button  class="pesquisa_filtro_botao">Limpar filtro</button>
         <mat-option id="{{item}}" *ngFor="let item of problemas ; let i = index;"
           [value]="item.id">
           {{item.tipo_problema}}
@@ -42,7 +40,32 @@
   </div>
 
 
-  <div style="display: flex; align-items: flex-end; justify-content: center;">
-    <button mat-raised-button color="primary" (click)="enviaDados()">Filtrar</button>
-  </div>
+</div>
+
+<div class="botao">
+  <button mat-raised-button color="primary" (click)="enviaDados()">Filtrar</button>
+</div>
+
+
+<div class="tabela">
+
+
+  <table id="customers">
+    <tr>
+      <th class="id">Id</th>
+      <th class="titulo_descricao">Descrição do problema</th>
+      <th>Local</th>
+      <th>Status</th>
+      <th>Nome do usuário</th>
+    </tr>
+    <tr *ngFor="let item of valores_filtro?.chamado" >
+      <td class="id">{{item.id}}</td>
+      <td class="descricao">{{item.desc_problema}}</td>
+      <td >{{item.local}}</td>
+      <td >{{item.status}}</td>
+      <td >{{item.id_usuario}}</td>
+    </tr>
+    
+  </table>
+
 </div>

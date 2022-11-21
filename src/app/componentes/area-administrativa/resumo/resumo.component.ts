@@ -50,11 +50,13 @@ export class ResumoComponent implements OnInit {
   value_problema: any = '';
   value_setor: any = '';
 
+  valores_filtro: any;
   enviaDados(){
     console.log(this.value_problema)
     console.log(this.value_setor)
     this.chamadoService.retorna_chamado_por_filtro(this.value_setor, this.value_problema).then(dados =>{
       console.log(dados)
+      this.valores_filtro = dados
     })
   }
 }

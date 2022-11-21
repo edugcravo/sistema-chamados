@@ -1,126 +1,4 @@
 
-
-  /*Estilizando modal reportar problema*/
-  ::ng-deep .swal2-styled.swal2-confirm{
-  background-color: #007AB5 !important;
-  }
-
- 
-
-  .pesquisa_filtro:focus{
-    outline: 0;
-  }
-
-  .pesquisa_filtro_botao{
-    border: none;
-    background-color: white;
-    height: 48px;
-    padding-left: 10px;
-    width: 100%;
-    display: flex;
-    border-bottom: 1px solid #c6c6c6;
-    align-items: center;
-    cursor: pointer;
-  }
-
-
-
-.container{
-    background-color: white;
-    height: 100vh;
-    margin-left: 120px;
-  }
-
-.bloco_inteiro{
-    display: inline-block;
-    width: 100%;
-    margin-top: 30px;
-    margin-bottom: 35px;
-    background-color: #fff;
-    height: 100%;
-    border-radius: 10px;
-}
-
-.titulo h1{
-  font-family:"futura-pt";
-  margin-top: 24px;
-  margin-left: 17px;
-  font-weight: 600;
-  font-size: 1.5rem;
-}
-
-.pesquisa{
-    margin-top: 27px;
-}
-
-.pesquisa input{
-    border: 1px solid #D8E6EC;
-    box-sizing: border-box;
-    border-radius: 20px;
-    width: 30%;
-    height: 35px;
-    padding-left: 35px;
-    font-family:"proxima-nova";
-    margin-left: -10px;
-}
-
-.pesquisa img{
-  position: relative;
-  bottom: 3px;
-  left: 20px;
-  cursor: pointer;
-}
-
-.mostrar{
-    margin-top: 25px;
-    margin-left: 20px;
-}
-
-.mostrar button{
-    border: none;
-    background-color: white;
-    height: 40px;
-    cursor: pointer;
-    padding: 10px;
-    margin-right: 10px;
-    font-family:"proxima-nova";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 0.9rem;
-    line-height: 14px;
-    text-transform: uppercase;
-    color: #404040;
-}
-
-
-/* .mat-form-field{
-    width: 100%;
-    border: none;
-    background-color: white;
-    height: 30px;
-    padding: 0 !important;
-  } */
-
-  ::ng-deep .mat-form-field-flex{
-    background-color: white;
-  }
-
-  .barra_de_pesquisa {
-    width: 100%;
-    
-  }
-
-  ::ng-deep .mat-form-field-wrapper {
-    background-color: white;
-    /* margin-left: -30px; */
-}
-
-  ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex{
-    background-color: white;
-    padding: 5px !important;
-    border-radius: 0px !important;
-  }
-
   ::ng-deep .mat-form-field-underline{
     width: 0 !important;
   }
@@ -130,22 +8,28 @@
 
 
 .filtro{
-    display: flex;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 20px;
-    border-bottom: 1px solid #c6c6c6;
-    padding-bottom: 35px;
+  display: flex;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  /* border-bottom: 1px solid #c6c6c6; */
+  /* padding-bottom: 35px; */
+  justify-content: center;
+}
+
+.botao{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
 }
 
 ::ng-deep .mat-select-search-input{
   padding: 16px 0px 16px 16px !important;
 }
 
-.uf, .unidade, .ano, .autor, .ultima_mod, .classificacao{
+.ano{
     display: flex;
     flex-direction: column;
-    max-width: 20%;
     margin-right: 10px;
     font-family:"proxima-nova";
 }
@@ -154,13 +38,25 @@
     width: 0 !important;
 }
 
+
+
 .pesquisa_filtro{
-    border: none;
-    background-color: white;
-    height: 48px;
-    padding-left: 32px;
-    width: 88%;
-    border-bottom: 1px solid #c6c6c6;
-    background-repeat: no-repeat;
-    background-position: 4%;
-  }
+  border: none;
+  padding: 10px;
+}
+
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: white;}
+
+#customers tr:hover {background-color: rgba(221, 221, 221, 0.253);}
