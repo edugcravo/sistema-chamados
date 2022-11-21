@@ -107,7 +107,6 @@ export class ChamadoIndividualUserComponent implements OnInit {
     }
     Swal.fire({
       title: 'Tem certeza que deseja cancelar?',
-      text: "Ao cancelar, não podera ser revertido!",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
@@ -131,10 +130,10 @@ export class ChamadoIndividualUserComponent implements OnInit {
     let tecnico = 1
     let body = {
       "status": "finalizado"
+
     }
     Swal.fire({
       title: 'Tem certeza que deseja finalizar?',
-      text: "Ao cancelar, não podera ser revertido!",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',

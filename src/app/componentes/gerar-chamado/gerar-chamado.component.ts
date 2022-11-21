@@ -33,12 +33,11 @@ export class GerarChamadoComponent implements OnInit {
   desc_problema: any;
   problemas: any;
   erro: any = false;
-  dataTimeAtual: any = new Date().toISOString()
+  dataTimeAtual: any ;
 
 
   constructor(private router: Router, private chamadosService: ChamadosService, private fb: UntypedFormBuilder, private _snackBar: MatSnackBar) {
  
-
     this.chamadosForm = this.fb.group({
       id_equipamento: ['', [Validators.required, Validators.maxLength(50)]],
       local: ['', [Validators.required, Validators.maxLength(50)]],
@@ -49,7 +48,7 @@ export class GerarChamadoComponent implements OnInit {
       id_tecnico: [0],
       id_usuario: [''],
       arquivo: [''],
-      data_hora_criacao: [this.dataTimeAtual]
+
     });
     
    }
@@ -59,7 +58,24 @@ export class GerarChamadoComponent implements OnInit {
       this.router.navigate(['login']);
     }
     this.obterTiposProblemas()
+
+    this.formatDate(this.dataTimeAtual)
   }
+
+  formatDate(date: any) {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) 
+        month = '0' + month;
+    if (day.length < 2) 
+        day = '0' + day;
+
+        console.log([year, month, day].join('-'));
+    return [year, month, day].join('-');
+}
 
   id_usuario: any = localStorage.getItem('id_usuario')
 
