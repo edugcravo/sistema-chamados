@@ -125,7 +125,7 @@ export class AreaAdministrativaComponent implements OnInit {
 
   openDialogResumo(): void {
     this.dialog.open(ResumoComponent, {
-      width: '50%',
+      width: '600%',
       height: '600px'
     });
   }

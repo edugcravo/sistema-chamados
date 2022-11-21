@@ -52,11 +52,53 @@ export class ResumoComponent implements OnInit {
 
   valores_filtro: any;
   enviaDados(){
+    if(this.value_problema == '') {
+      this.value_problema = ['']
+    }
+
+    if(this.value_setor == '') {
+      this.value_setor = ['']
+    }
+
     console.log(this.value_problema)
     console.log(this.value_setor)
     this.chamadoService.retorna_chamado_por_filtro(this.value_setor, this.value_problema).then(dados =>{
       console.log(dados)
       this.valores_filtro = dados
+
+      this.valores_filtro.chamado.forEach((element: any, index: any) => {
+        element.id_usuario = this.valores_filtro.nome_users[index]
+        element.tipo_problema = this.valores_filtro.problemas[index]
+
+      });
     })
+  }
+
+  valorFiltroSelecionadoSetor: any;
+  valorFiltroAno: any;
+
+  onKeySetor(value: string) {
+    this.valorFiltroSelecionadoSetor = this.setores
+    this.valorFiltroSelecionadoSetor = this.searchSetor(value);
+  }
+
+  searchSetor(value: string) {
+    let filter = value.toLowerCase();
+    return this.setores.filter((option: any) => option.toLowerCase().startsWith(filter));
+  }
+
+
+
+  valorFiltroSelecionadoProblema: any;
+  valorFiltroProblema: any;
+
+  onKeyProblema(value: string) {
+    this.valorFiltroSelecionadoProblema = this.problemas.tipo_problema
+    this.valorFiltroSelecionadoProblema = this.searchProblema(value);
+  }
+
+  searchProblema(value: string) {
+    let filter = value.toLowerCase();
+    return this.problemas.tipo_problema.filter((option: any) => option.toLowerCase().startsWith(filter));
   }
 }

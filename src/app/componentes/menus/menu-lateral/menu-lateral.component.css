@@ -19,7 +19,10 @@ a {
 }
 
 .logo{
-    height: 13%;    
+    height: 13%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .logo pre{
@@ -27,6 +30,7 @@ a {
     font-size: 24px;
     text-align: center;
     padding-top: 7px;
+    margin-bottom: 0px;
 }
 
 

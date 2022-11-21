@@ -43,6 +43,7 @@
 .pesquisa_filtro{
   border: none;
   padding: 10px;
+  width: 100%;
 }
 
 
@@ -50,6 +51,10 @@
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
+}
+
+td{
+  text-align: center;
 }
 
 #customers td, #customers th {

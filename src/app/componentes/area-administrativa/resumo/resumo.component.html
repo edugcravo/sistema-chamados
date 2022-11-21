@@ -7,8 +7,8 @@
 
       <mat-select #matRefAno multiple [(ngModel)]="value_setor">
 
-        <input class="pesquisa_filtro" placeholder="Pesquisar" #valorbuscaAno
-          >
+        <input class="pesquisa_filtro" placeholder="Pesquisar" #valorbuscaSetor
+        (keyup)="onKeySetor(valorbuscaSetor.value)">
         <mat-option id="{{item}}" *ngFor="let item of setores ; let i = index;"
           [value]="item">
           {{item}}
@@ -46,7 +46,7 @@
   <button mat-raised-button color="primary" (click)="enviaDados()">Filtrar</button>
 </div>
 
-
+<p>Total de chamados: <b>{{valores_filtro?.chamado?.length}}</b></p>
 <div class="tabela">
 
 
@@ -54,9 +54,10 @@
     <tr>
       <th class="id">Id</th>
       <th class="titulo_descricao">Descrição do problema</th>
-      <th>Local</th>
+      <th>Setor</th>
       <th>Status</th>
       <th>Nome do usuário</th>
+      <th>Tipo do problema:</th>
     </tr>
     <tr *ngFor="let item of valores_filtro?.chamado" >
       <td class="id">{{item.id}}</td>
@@ -64,6 +65,7 @@
       <td >{{item.local}}</td>
       <td >{{item.status}}</td>
       <td >{{item.id_usuario}}</td>
+      <td> {{item.tipo_problema}}</td>
     </tr>
     
   </table>

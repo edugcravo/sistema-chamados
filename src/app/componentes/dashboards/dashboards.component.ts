@@ -20,6 +20,7 @@ export class DashboardsComponent implements OnInit {
   ngOnInit() {
     // this.iniciaGrafico()
     this.obterTodosChamados()
+
   }
 
   listaLabels: any = []
@@ -95,13 +96,24 @@ export class DashboardsComponent implements OnInit {
   finalizados = 0
   andamento = 0
   cancelados = 0
+  time: any;
+  time2: any;
 
   obterTodosChamados(){
     let id = localStorage.getItem('id_tecnico')
     this.chamadosService.retorna_chamado_por_id_tecnico(id).then((data: any) =>{
       console.log(data.chamado)
+      this.time = data.chamado[0].data_hora_criacao
+      this.time2 = data.chamado[1].data_hora_criacao
 
-      
+      var day1 = new Date("08/25/2020");
+      var day2 = new Date("12/25/2021");
+
+      var difference: any = this.time2.getTime()-this.time.getTime();
+
+      document.write(difference);
+        console.log(this.time)
+
 
       for(let item of data?.chamado){
         if(item.status == 'finalizado'){

@@ -33,7 +33,7 @@ export class ChamadosComponent implements OnInit {
   obterChamados(){
     this.chamadosService.retorna_chamado_por_id_tecnico(localStorage.getItem('id_tecnico')).then((data: any) =>{
       this.chamado = data
-
+      console.log(this.chamado)
       this.chamado.chamado.forEach((element: any, index: any) => {
         element.id_usuario = this.chamado.usuarios[index]
       });

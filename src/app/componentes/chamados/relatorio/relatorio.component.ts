@@ -24,7 +24,7 @@ export class RelatorioComponent implements OnInit {
   andamento = 0
   cancelados = 0
   tecnicos: any;
-
+  mostrar = false;
 
   infosRelatorio(){
 
@@ -38,7 +38,7 @@ export class RelatorioComponent implements OnInit {
         this.andamento++
       }
 
-      if(item.status == "finalizados"){
+      if(item.status == "finalizado"){
         this.finalizados++
       }
 
@@ -47,13 +47,13 @@ export class RelatorioComponent implements OnInit {
       }
 
 
-      console.log(item)
     }
     this.listaLabels.push('Finalizados', 'Aberto', 'cancelados')
     this.listaValores.push(this.finalizados, this.andamento, this.cancelados)
-    console.log(this.listaValores)
+
     setTimeout(() => {
       this.grafico()
+      this.mostrar = true
     }, 500);
   }
 

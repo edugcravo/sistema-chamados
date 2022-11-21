@@ -42,6 +42,7 @@ import { NzSpinModule } from 'ng-zorro-antd/spin';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ResumoComponent } from './componentes/area-administrativa/resumo/resumo.component';
+import { RelatorioComponent } from './componentes/chamados/relatorio/relatorio.component';
 
 
 @NgModule({
@@ -64,7 +65,8 @@ import { ResumoComponent } from './componentes/area-administrativa/resumo/resumo
     TecnicosComponent,
     NovoTecnicoComponent,
     LogsComponent,
-    ResumoComponent
+    ResumoComponent,
+    RelatorioComponent
    ],
   imports: [
     BrowserModule,
