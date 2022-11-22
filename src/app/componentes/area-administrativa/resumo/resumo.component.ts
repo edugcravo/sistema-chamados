@@ -55,6 +55,8 @@ export class ResumoComponent implements OnInit {
 
   media: any;
   enviaDados(){
+    this.dias = 0
+    this.hora = 0
     if(this.value_problema == '') {
       this.value_problema = ['']
     }

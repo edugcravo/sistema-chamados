@@ -14,7 +14,6 @@ export class MenuLateralComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    console.log(this.tecnico)
   }
 
 

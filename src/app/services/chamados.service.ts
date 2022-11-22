@@ -73,6 +73,18 @@ export class ChamadosService {
   }
 
 
+  retorna_chamado_por_setor(setor: any) {
+    let params = new HttpParams()
+      .set('setor', setor)
+
+    return new Promise(resolve => {
+      this.http.get(this.url + '/chamado/retorna-setor', { headers: this.headers, params }).subscribe(data => {
+        resolve(data)
+      })
+    })
+  }
+
+
   atualiza_chamado(id:any, body: any, tecnico: any){
 
     console.log(id)

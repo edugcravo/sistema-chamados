@@ -33,6 +33,8 @@ export class LoginComponent implements OnInit {
         }
         else{
           localStorage.setItem('usuario', this.usuario)
+          localStorage.setItem('nivel', data?.nivel)
+          localStorage.setItem('setor', data?.setor)
           localStorage.setItem('id_usuario', data?.id)
           this.router.navigate(['gerar-chamado'])
         }

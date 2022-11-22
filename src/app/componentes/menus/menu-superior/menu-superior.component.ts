@@ -41,7 +41,6 @@ export class MenuSuperiorComponent implements OnInit {
       dadosEnviar = this.nomeUsuario
     }
     this.loginService.retornaUsuarioLogado(dadosEnviar).then((data: any) =>{
-      console.log(data)
       this.usuario = data.usuario
 
       this.usuario.img_perfil = this._sanitizer.bypassSecurityTrustResourceUrl(

@@ -27,6 +27,7 @@ export class ChamadosVisualizacaoUserComponent implements OnInit {
   }
 
   obterChamados(){
+    if(localStorage.getItem('nivel') != 'gestor'){
     this.chamadosService.retorna_chamado_por_usuario(localStorage.getItem('id_usuario')).then((data: any) =>{
       
       this.chamado = data.chamado
@@ -44,6 +45,21 @@ export class ChamadosVisualizacaoUserComponent implements OnInit {
       console.log(this.chamado)
       console.log(this.tecnicoChamado)
     })
+  }else{
+    this.chamadosService.retorna_chamado_por_setor(localStorage.getItem('setor')).then((data: any) =>{
+      this.chamado = data.chamado
+      this.tecnicoChamado = data.tecnicos
+      let nomesTecnico: any[] = []
+
+      for(let tecnico of this.tecnicoChamado){
+        nomesTecnico.push(tecnico.nome)
+      }
+
+      nomesTecnico.forEach((element: any, index: any) => {
+          this.chamado[index]['nome_tecnico'] = element
+      })
+    })
+  }
   }
 
 

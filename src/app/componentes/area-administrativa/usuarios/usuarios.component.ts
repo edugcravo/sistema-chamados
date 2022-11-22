@@ -16,12 +16,12 @@ export class UsuariosComponent implements OnInit {
   
 
   constructor(private loginService: LoginService, @Inject(MAT_DIALOG_DATA) public data: any, private fb: FormBuilder, public dialog: MatDialog) { 
-    this.nomeAtual = this.data[0].nome
+    this.nomeAtual = this.data[0]?.nome
     this.usuarioForm = this.fb.group({
-      nome: [data[0].nome, [Validators.required]],
-      email: [data[0].email, [Validators.required]],
+      nome: [data[0]?.nome, [Validators.required]],
+      email: [data[0]?.email, [Validators.required]],
 
-      setor: [data[0].setor, [Validators.required]],
+      setor: [data[0]?.setor, [Validators.required]],
     });
 
 
