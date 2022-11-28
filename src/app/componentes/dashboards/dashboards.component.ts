@@ -106,12 +106,7 @@ export class DashboardsComponent implements OnInit {
       this.time = data.chamado[0].data_hora_criacao
       this.time2 = data.chamado[1].data_hora_criacao
 
-      var day1 = new Date("08/25/2020");
-      var day2 = new Date("12/25/2021");
-
-      var difference: any = this.time2.getTime()-this.time.getTime();
-
-      document.write(difference);
+      
         console.log(this.time)
 
 
