@@ -14,6 +14,7 @@ export class ChamadosVisualizacaoUserComponent implements OnInit {
   userLogado: any = localStorage.getItem('logado')
   chamado: any;
   tecnicoChamado: any;
+  value_filtro_user: any = ''
 
   constructor(private chamadosService: ChamadosService, private router: Router, public dialog: MatDialog) { }
 
@@ -25,6 +26,8 @@ export class ChamadosVisualizacaoUserComponent implements OnInit {
     }
     
   }
+
+  mostrarNomeUser: any = false;
 
   obterChamados(){
     if(localStorage.getItem('nivel') != 'gestor'){
@@ -47,8 +50,11 @@ export class ChamadosVisualizacaoUserComponent implements OnInit {
     })
   }else{
     this.chamadosService.retorna_chamado_por_setor(localStorage.getItem('setor')).then((data: any) =>{
+      console.log(data)
+      this.mostrarNomeUser = true
       this.chamado = data.chamado
       this.tecnicoChamado = data.tecnicos
+      let usuariosChamado = data.usuarios
       let nomesTecnico: any[] = []
 
       for(let tecnico of this.tecnicoChamado){
@@ -58,6 +64,12 @@ export class ChamadosVisualizacaoUserComponent implements OnInit {
       nomesTecnico.forEach((element: any, index: any) => {
           this.chamado[index]['nome_tecnico'] = element
       })
+
+      for(let usuario of usuariosChamado){
+        this.chamado[usuariosChamado.indexOf(usuario)]['nome_usuario'] = usuario.nome
+      }
+
+      this.obterUsuariosSetor()
     })
   }
   }
@@ -70,5 +82,46 @@ export class ChamadosVisualizacaoUserComponent implements OnInit {
     //   width: '500px',
     //   data: id
     // });
+  }
+
+  usuarios: any;
+
+  obterUsuariosSetor(){
+    this.chamadosService.retorna_usuarios_por_setor(localStorage.getItem('setor')).then((data: any) =>{
+      this.usuarios = data
+      console.log(this.usuarios)
+    })
+  }
+
+  filtrar(){
+    this.chamadosService.retorna_chamado_por_filtro_usuario(this.value_filtro_user, localStorage.getItem('setor')).then((data: any) =>{
+      this.chamado  =data.chamado
+      console.log(data)
+
+      this.tecnicoChamado = data.tecnicos
+      console.log(this.tecnicoChamado)
+      let usuariosChamado = data.usuarios
+      let nomesTecnico: any[] = []
+      let nomesUsuario: any[] = []
+
+      for(let tecnico of this.tecnicoChamado){
+        nomesTecnico.push(tecnico)
+      }
+
+      for(let usuario of usuariosChamado){
+        nomesUsuario.push(usuario)
+      }
+
+      nomesTecnico.forEach((element: any, index: any) => {
+        console.log(element)
+          this.chamado[index]['nome_tecnico'] = element
+      })
+
+      for(let usuario of usuariosChamado){
+        this.chamado[usuariosChamado.indexOf(usuario)]['nome_usuario'] = usuario
+      }
+
+    })
+
   }
 }

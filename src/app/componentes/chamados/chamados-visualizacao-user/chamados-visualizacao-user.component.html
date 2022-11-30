@@ -8,6 +8,29 @@
       <p>Chamados Abertos : <span>{{chamado?.length}}</span></p>
      
 
+      <div class="ano">
+
+        <label for="">Usuários:</label>
+        <mat-form-field appearance="fill">
+          <mat-label>Selecione...</mat-label>
+    
+          <mat-select #matRefAno multiple [(ngModel)]="value_filtro_user">
+    
+            <input class="pesquisa_filtro" placeholder="Pesquisar" #valorbuscaAno
+              >
+            <mat-option id="{{item}}" *ngFor="let item of usuarios.usuarios_setores ; let i = index;"
+              [value]="item.id">
+              {{item.nome}}
+            </mat-option>
+    
+          </mat-select>
+    
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" (click)="filtrar()" class="filtrar">FILTRAR</button>
+      </div>
+
+      
     </div>
 
     <div class="bloco_conteudo">
@@ -21,7 +44,8 @@
             <th class="titulo_descricao">Descrição do problema</th>
             <th>Local</th>
             <th>Status</th>
-            <th>Nome do tecnico</th>
+            <th>Nome do técnico</th>
+            <th *ngIf="mostrarNomeUser">Nome do usuário</th>
           </tr>
           <tr *ngFor="let item of chamado" (click)="abreChamado(item.id)">
             <td><input type="checkbox" name="" id=""></td>
@@ -30,6 +54,7 @@
             <td>{{item.local}}</td>
             <td>{{item.status}}</td>
             <td>{{item.nome_tecnico}}</td>
+            <td *ngIf="mostrarNomeUser">{{item.nome_usuario}}</td>
           </tr>
           
         </table>

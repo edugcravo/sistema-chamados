@@ -85,6 +85,21 @@ export class ChamadosService {
   }
 
 
+
+  retorna_chamado_por_filtro_usuario(nome: any, setor: any) {
+    let body = {
+      nome: nome,
+      setor: setor
+    }
+
+    return new Promise(resolve => {
+      this.http.post(this.url + '/chamado/retorna-por-filtro-usuario', body, { headers: this.headers }).subscribe(data => {
+        resolve(data)
+      })
+    })
+  }
+
+
   atualiza_chamado(id:any, body: any, tecnico: any){
 
     console.log(id)
@@ -146,6 +161,18 @@ export class ChamadosService {
 
     return new Promise(resolve => {
       this.http.get(this.url + '/chamado/retorna-id-usuario', { headers: this.headers, params }).subscribe(data => {
+        resolve(data)
+      })
+    })
+  }
+
+
+  retorna_usuarios_por_setor(id: any){
+    let params = new HttpParams()
+      .set('setor', id)
+
+    return new Promise(resolve => {
+      this.http.get(this.url + '/retorna_users_setor', { headers: this.headers, params }).subscribe(data => {
         resolve(data)
       })
     })

@@ -20,6 +20,21 @@
     justify-content: center;
 }
 
+.pesquisa_filtro{
+    border: none;
+    padding: 10px;
+    width: 100%;
+  }
+
+.ano label{
+    margin-right: 10px;
+}
+
+.filtrar{
+    
+    margin-left: 20px;
+}
+
 label {
     font-size: 20px;
 }
