@@ -47,14 +47,14 @@
               
                       <div class="descricao_problema">
                         <label >Descrição do problema : </label>
-                        <textarea value="{{chamado?.desc_problema}}" disabled placeholder="Descreva o problema detalhadamente para que o técnico tenha um diagnostico com uma melhor precisao" ></textarea>
+                        <textarea value="{{chamado?.desc_problema}}" disabled placeholder="Descreva o problema detalhadamente para que o técnico tenha um diagnóstico com uma melhor precisão" ></textarea>
                       </div>
               
 
 
                       <div [ngClass]="item.tecnico == 0 ? 'resposta' : 'resposta2'" *ngFor="let item of respostas">
                         <label *ngIf="item.tecnico == 0">Resposta {{tecnicoChamado?.nome}}: </label>
-                        <label *ngIf="item.tecnico == 1">Resposta usuario: </label>
+                        <label *ngIf="item.tecnico == 1">Resposta usuário: </label>
 
                         <div class="resposta_bloco">
                           <p>{{item?.data | date: 'dd/MM/yyyy HH:mm'}}</p>

@@ -8,7 +8,7 @@
       <p>Chamados Abertos : <span>{{chamado?.length}}</span></p>
      
 
-      <div class="ano">
+      <div class="ano" *ngIf="mostrarNomeUser">
 
         <label for="">Usuários:</label>
         <mat-form-field appearance="fill">
